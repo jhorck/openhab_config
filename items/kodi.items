@@ -16,8 +16,8 @@ String htpc_pvropentv             "Play PVR TV channel [%s]"                    
 String htpc_pvropenradio          "Play PVR Radio channel [%s]"                  (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:pvr-open-radio" }
 String htpc_pvrchannel            "PVR channel [%s]"                             (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:pvr-channel" }
 String htpc_notification          "Show Notification"                            (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:shownotification" }
-String htpc_error-notification    "Error Notification"                           (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:error-notification" }
-String htpc_weather-notification  "Weather Notification"                         (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:weather-notification" }
+String htpc_error_notification    "Error Notification"                           (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:error-notification" }
+String htpc_weather_notification  "Weather Notification"                         (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:weather-notification" }
 String htpc_input                 "Send a key"                                   (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:input" }
 String htpc_inputtext             "Send text as input"                           (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:inputtext" }
 String htpc_inputaction           "Execute an action"                            (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:inputaction" }
