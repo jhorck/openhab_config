@@ -1,0 +1,10 @@
+Bridge netatmo:account:myaccount "Netatmo Account" [clientId="xxx", clientSecret="yyy"] {
+    Bridge weather-station inside "Netatmo Inside Weather Station" [id="70:ee:50:1c:45:14"] {
+        outdoor outside   "Netatmo Outside Module" [id="02:00:00:9b:57:66"] {
+//            Channels:
+//                Type hum-measurement : maxHumWeek [limit="MAX",period="1week"]
+        }
+        indoor indoor2 "Netatmo Additional Module" [id="03:00:00:05:77:1c"] {
+        }
+    }
+}

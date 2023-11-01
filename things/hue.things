@@ -1,0 +1,59 @@
+// openhab> openhab:hue hue:bridge-api2:1 applicationkey
+// openhab> openhab:hue hue:bridge-api2:1 things
+
+Bridge hue:bridge-api2:1 "Philips hue" [ipAddress="192.168.188.103", applicationKey="LSXLFj6y5nrMprz0CcoYCYzBtsesvj3rW6JFanhU"] {
+    // Zone things
+    Thing zone ac101640-4e35-4619-bf80-bfe6622d1102 "Aanrecht" [resourceId="ac101640-4e35-4619-bf80-bfe6622d1102"] // Zone idV1:/groups/12
+    Thing zone c5fddc20-c699-4eef-9497-9130cbdec954 "Terrasse" [resourceId="c5fddc20-c699-4eef-9497-9130cbdec954"] // Zone idV1:/groups/17
+    // Room things
+    Thing room d2502929-d477-4c6e-9566-65d4dad6c84d "Eettafel" [resourceId="d2502929-d477-4c6e-9566-65d4dad6c84d"] // Room idV1:/groups/5
+    Thing room 5f49a29a-d28d-4881-b9d0-f26330e3af4d "Jorn" [resourceId="5f49a29a-d28d-4881-b9d0-f26330e3af4d"] // Room idV1:/groups/7
+    Thing room bffeb807-3dd1-4c03-86aa-700ebf707252 "Kerstverlichting" [resourceId="bffeb807-3dd1-4c03-86aa-700ebf707252"] // Room idV1:/groups/4
+    Thing room ef8937fd-5826-4ca6-98eb-bad91f684411 "Küche" [resourceId="ef8937fd-5826-4ca6-98eb-bad91f684411"] // Room idV1:/groups/3
+    Thing room 10102b4d-ad0e-4233-8c5c-3a6241e281ca "Lars" [resourceId="10102b4d-ad0e-4233-8c5c-3a6241e281ca"] // Room idV1:/groups/9
+    Thing room 056a8ba3-b484-4820-a67a-919ad55d3c88 "Overloop" [resourceId="056a8ba3-b484-4820-a67a-919ad55d3c88"] // Room idV1:/groups/8
+    Thing room 2f0d3a65-a72b-43b3-b1bd-10d59dc39d1d "Pool" [resourceId="2f0d3a65-a72b-43b3-b1bd-10d59dc39d1d"] // Room idV1:/groups/14
+    Thing room 7dd89afd-1901-45b1-886f-0cf05a53f863 "Schuppen" [resourceId="7dd89afd-1901-45b1-886f-0cf05a53f863"] // Room idV1:/groups/15
+    Thing room 723dcd63-9415-472a-8aea-3c109d39fece "Terrassenüberdachung" [resourceId="723dcd63-9415-472a-8aea-3c109d39fece"] // Room idV1:/groups/16
+    Thing room c0de69ae-167e-496f-be85-ff6771c30ef8 "Test" [resourceId="c0de69ae-167e-496f-be85-ff6771c30ef8"] // Room idV1:/groups/6
+    Thing room 8ef476d9-97eb-44ab-95ba-08aca7a15203 "Wohnzimmer" [resourceId="8ef476d9-97eb-44ab-95ba-08aca7a15203"] // Room idV1:/groups/2
+    Thing room b73e6460-8932-4ee7-8368-8ea89d334e2e "Zolder" [resourceId="b73e6460-8932-4ee7-8368-8ea89d334e2e"] // Room idV1:/groups/13
+    // Device things
+    Thing device 883cecd6-d460-40db-9c1a-40115d51838e "Aanrecht 1" [resourceId="883cecd6-d460-40db-9c1a-40115d51838e"] // Hue ambiance spot idV1:/lights/31
+    Thing device 420ebcae-b4de-4981-95c3-3f04aff66af7 "Aanrecht 2" [resourceId="420ebcae-b4de-4981-95c3-3f04aff66af7"] // Hue ambiance spot idV1:/lights/29
+    Thing device 1e488297-2550-4cbd-aa20-379baa287963 "Aanrecht 3" [resourceId="1e488297-2550-4cbd-aa20-379baa287963"] // Hue ambiance spot idV1:/lights/30
+    Thing device 90927fdf-8e4d-42cc-a1e9-3535f8bcebf8 "Color light 1" [resourceId="90927fdf-8e4d-42cc-a1e9-3535f8bcebf8"] // LivingColors idV1:/lights/1
+    Thing device d03c25c9-a5d4-460e-b088-3d23d996bfe0 "Eettafel 1" [resourceId="d03c25c9-a5d4-460e-b088-3d23d996bfe0"] // Hue ambiance spot idV1:/lights/37
+    Thing device 9219e801-f747-4bae-88e1-4e8034b626c5 "Eettafel 2" [resourceId="9219e801-f747-4bae-88e1-4e8034b626c5"] // Hue ambiance spot idV1:/lights/38
+    Thing device 7fbcfb9d-fcac-4dde-93ed-b490cd2abc49 "Eettafel 3" [resourceId="7fbcfb9d-fcac-4dde-93ed-b490cd2abc49"] // Hue ambiance spot idV1:/lights/39
+    Thing device 028ed7ed-bedc-47ef-974f-221fb9356bb5 "Eettafel schakelaar" [resourceId="028ed7ed-bedc-47ef-974f-221fb9356bb5"] // Hue wall switch module idV1:/sensors/41
+    Thing device 60322c86-8db6-4592-bb20-fa61dbaf3a28 "Friends of Hue Switch 1" [resourceId="60322c86-8db6-4592-bb20-fa61dbaf3a28"] // Friends of Hue Switch idV1:/sensors/33
+    Thing device 39492dfc-5084-41a7-9c02-8935ea1a6a03 "Hue Smart plug 1" [resourceId="39492dfc-5084-41a7-9c02-8935ea1a6a03"] // Hue Smart plug idV1:/lights/41
+    Thing device cfaa342a-ee22-4f12-bbd3-467efdb0e9aa "Hue Smart plug 2" [resourceId="cfaa342a-ee22-4f12-bbd3-467efdb0e9aa"] // Hue Smart plug idV1:/lights/47
+    Thing device 412492c4-1108-4318-9991-e79738e6d769 "Hue lightstrip outdoor 1" [resourceId="412492c4-1108-4318-9991-e79738e6d769"] // Hue lightstrip outdoor idV1:/lights/42
+    Thing device 9a1f95ec-8e83-45d0-ac1e-03b37ef8c8ed "Hue tap switch 1" [resourceId="9a1f95ec-8e83-45d0-ac1e-03b37ef8c8ed"] // Hue tap switch idV1:/sensors/3
+    Thing device 897f45a9-ac56-4192-82e6-cda1f2b6b484 "Jorn 1" [resourceId="897f45a9-ac56-4192-82e6-cda1f2b6b484"] // Hue color lamp idV1:/lights/35
+    Thing device da2c513f-8665-4add-9111-93c58cac5eeb "Jorn's schakelaar" [resourceId="da2c513f-8665-4add-9111-93c58cac5eeb"] // Hue dimmer switch idV1:/sensors/10
+    Thing device aef04f78-1ad2-4c81-9c3d-a8cb3e351de9 "Kerstboom" [resourceId="aef04f78-1ad2-4c81-9c3d-a8cb3e351de9"] // LivingWhites Plug idV1:/lights/6
+    Thing device 9408a31c-ceac-42f9-ae33-0dd05c1d1056 "Kerstverlichting 1" [resourceId="9408a31c-ceac-42f9-ae33-0dd05c1d1056"] // Hue Smart plug idV1:/lights/48
+    Thing device 0e38d569-5fff-4e7c-b462-59d3d6e32ee9 "Kerstverlichting 2" [resourceId="0e38d569-5fff-4e7c-b462-59d3d6e32ee9"] // Hue Smart plug idV1:/lights/49
+    Thing device 9fe2c845-ebb6-4c76-bcb7-bbedc3f16a55 "Lamp klok" [resourceId="9fe2c845-ebb6-4c76-bcb7-bbedc3f16a55"] // LivingColors idV1:/lights/4
+    Thing device 8d319df1-602f-4132-b45a-f53f549ada3d "Lars 1" [resourceId="8d319df1-602f-4132-b45a-f53f549ada3d"] // Hue color lamp idV1:/lights/34
+    Thing device e17e6f42-539a-4bba-bdfa-488f086df8d4 "Lars schakelaar" [resourceId="e17e6f42-539a-4bba-bdfa-488f086df8d4"] // Hue dimmer switch idV1:/sensors/13
+    Thing device 9dea8204-a1e3-4b6f-a4e3-436c3a948cff "Muur 1" [resourceId="9dea8204-a1e3-4b6f-a4e3-436c3a948cff"] // Dimmable light idV1:/lights/45
+    Thing device 98957809-acc4-4303-ac09-4adb1d50195e "Muur 2" [resourceId="98957809-acc4-4303-ac09-4adb1d50195e"] // Dimmable light idV1:/lights/46
+    Thing device 8e80e1f4-e1a8-4b54-9df8-9a85eac4ca51 "Muur 3" [resourceId="8e80e1f4-e1a8-4b54-9df8-9a85eac4ca51"] // Dimmable light idV1:/lights/44
+    Thing device c58024ba-4662-499b-813c-7e641820b8eb "On/Off plug 1" [resourceId="c58024ba-4662-499b-813c-7e641820b8eb"] // On/Off plug idV1:/lights/40
+    Thing device de971104-ae33-4bff-ac43-db9370831198 "Overkapping 1" [resourceId="de971104-ae33-4bff-ac43-db9370831198"] // Dimmable light idV1:/lights/43
+    Thing device d3ef8427-1163-410a-8925-e5df93acc5cc "Overloop 1" [resourceId="d3ef8427-1163-410a-8925-e5df93acc5cc"] // Hue color lamp idV1:/lights/36
+    Thing device ff986c72-72d3-4d11-98cf-89bb1bbd8d59 "Overloop sensor" [resourceId="ff986c72-72d3-4d11-98cf-89bb1bbd8d59"] // Hue motion sensor idV1:/sensors/5
+    Thing device f3b7fafd-d3e4-4873-8480-96ad0d5c34e9 "Raam voor" [resourceId="f3b7fafd-d3e4-4873-8480-96ad0d5c34e9"] // LivingWhites Plug idV1:/lights/5
+    Thing device b9fa9384-25a9-4555-ae2e-a046a99b15fc "Schuur" [resourceId="b9fa9384-25a9-4555-ae2e-a046a99b15fc"] // LivingWhites Plug idV1:/lights/3
+    Thing device 9cb30ba2-d0f6-4dfe-836e-bd69440116bb "TV Links" [resourceId="9cb30ba2-d0f6-4dfe-836e-bd69440116bb"] // Hue color lamp idV1:/lights/2
+    Thing device dc026d29-9301-4236-aea7-8c68a87b1f15 "TV Rechts" [resourceId="dc026d29-9301-4236-aea7-8c68a87b1f15"] // Hue color lamp idV1:/lights/27
+    Thing device 3a7f847b-e823-4194-9878-b9fcf37e9a87 "Terrasse sensor" [resourceId="3a7f847b-e823-4194-9878-b9fcf37e9a87"] // Hue outdoor motion sensor idV1:/sensors/17
+    Thing device 78a563de-bfc1-4ecc-8613-dca0529fcad6 "Vloerlamp kleur" [resourceId="78a563de-bfc1-4ecc-8613-dca0529fcad6"] // Extended color light idV1:/lights/25
+    Thing device 086e6248-44b1-48d3-a77b-9ba6b872ef49 "Vloerlamp wit" [resourceId="086e6248-44b1-48d3-a77b-9ba6b872ef49"] // Dimmable light idV1:/lights/26
+    // Bridge home things
+    Thing zone f4709117-9075-4db0-9624-eec7b1991e89 "All lights" [resourceId="f4709117-9075-4db0-9624-eec7b1991e89"] // Zone idV1:/groups/0
+}

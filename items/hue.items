@@ -1,0 +1,221 @@
+
+// Room idV1:/groups/3
+Group:Switch:AND(ON,OFF) gLichtKeuken "Licht keuken" <Light> (gKeuken) ["Lightbulb"]
+//Dimmer LichtKeukeun_Brightness "Brightness [%.0f %%]" <Light> (gLichtKeuken) ["Control", "Light"] {channel="hue:zone:1:ef8937fd-5826-4ca6-98eb-bad91f684411:brightness"}
+
+// Zone idV1:/groups/12
+Group:Switch:AND(ON,OFF) gAanrecht "Aanrecht" <Light> (gLichtKeuken) ["Lightbulb"]
+Dimmer Aanrecht_Brightness "Brightness [%.0f %%]" <Light> (gAanrecht) ["Control", "Light"] {channel="hue:zone:1:ac101640-4e35-4619-bf80-bfe6622d1102:brightness"}
+//Switch Aanrecht_Power "Power" <switch> (gAanrecht) ["Switch", "Power"] {channel="hue:zone:1:ac101640-4e35-4619-bf80-bfe6622d1102:brightness"}
+
+// Hue ambiance spot idV1:/lights/31
+Group gAanrecht1 "Aanrecht 1" <Light> (gAanrecht) ["Lightbulb"]
+Dimmer Aanrecht1_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gAanrecht1) ["Control", "ColorTemperature"] {channel="hue:device:1:883cecd6-d460-40db-9c1a-40115d51838e:color-temperature"}
+Dimmer Aanrecht1_Brightness "Brightness [%.0f %%]" <Light> (gAanrecht1) ["Control", "Light"] {channel="hue:device:1:883cecd6-d460-40db-9c1a-40115d51838e:brightness"}
+
+// Hue ambiance spot idV1:/lights/29
+Group gAanrecht2 "Aanrecht 2" <Light> (gAanrecht) ["Lightbulb"]
+Dimmer Aanrecht2_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gAanrecht2) ["Control", "ColorTemperature"] {channel="hue:device:1:420ebcae-b4de-4981-95c3-3f04aff66af7:color-temperature"}
+Dimmer Aanrecht2_Brightness "Brightness [%.0f %%]" <Light> (gAanrecht2) ["Control", "Light"] {channel="hue:device:1:420ebcae-b4de-4981-95c3-3f04aff66af7:brightness"}
+
+// Hue ambiance spot idV1:/lights/30
+Group gAanrecht3 "Aanrecht 3" <Light> (gAanrecht) ["Lightbulb"]
+Dimmer Aanrecht3_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gAanrecht3) ["Control", "ColorTemperature"] {channel="hue:device:1:1e488297-2550-4cbd-aa20-379baa287963:color-temperature"}
+Dimmer Aanrecht3_Brightness "Brightness [%.0f %%]" <Light> (gAanrecht3) ["Control", "Light"] {channel="hue:device:1:1e488297-2550-4cbd-aa20-379baa287963:brightness"}
+
+// LivingColors idV1:/lights/4
+Group:Switch:AND(ON,OFF) gLampKlok "Lamp klok" <Light> (gLichtKeuken) ["Lightbulb"]
+Color LampKlok_Color "Color [%.0f]" <ColorLight> (gLampKlok) ["Control", "Light"] {channel="hue:device:1:9fe2c845-ebb6-4c76-bcb7-bbedc3f16a55:color"}
+
+// LivingWhites Plug idV1:/lights/5
+Group:Switch:AND(ON,OFF) gRaamVoor "Raam voor" <Light> (gLichtKeuken) ["Lightbulb"]
+Dimmer RaamVoor_Brightness "Brightness [%.0f %%]" <Light> (gRaamVoor) ["Control", "Light"] {channel="hue:device:1:f3b7fafd-d3e4-4873-8480-96ad0d5c34e9:brightness"}
+ 
+
+
+// Room idV1:/groups/5
+Group:Switch:AND(ON,OFF) gEettafel "Eettafel" <Light> (gKamer) ["Lightbulb"]
+Dimmer Eettafel_Brightness "Brightness [%.0f %%]" <Light> (gEettafel) ["Control", "Light"] {channel="hue:room:1:d2502929-d477-4c6e-9566-65d4dad6c84d:brightness"}
+
+// Hue wall switch module idV1:/sensors/41
+Group gSwitchEettafel "Switch eettafel" <WallSwitch> (gEettafel) ["WallSwitch"]
+String SwitchEettafel_Button_Last_Event "Botton Last Event [%d]" (gSwitchEettafel) ["Point"] {channel="hue:device:1:028ed7ed-bedc-47ef-974f-221fb9356bb5:button-last-event"}
+String SwitchEettafel_Last_Updated "Last Updated [%s]" <Time> (gSwitchEettafel) ["Point"] {channel="hue:device:1:028ed7ed-bedc-47ef-974f-221fb9356bb5:last-updated"}
+Number SwitchEettafel_Battery_Level "Battery Level [%.0f %%]" <Battery> (gSwitchEettafel) ["Measurement", "Energy"] {channel="hue:device:1:028ed7ed-bedc-47ef-974f-221fb9356bb5:battery-level"}
+Switch SwitchEettafel_Low_Battery "Low Battery" <LowBattery> (gSwitchEettafel) ["LowBattery", "Energy"] {channel="hue:device:1:028ed7ed-bedc-47ef-974f-221fb9356bb5:battery-low"}
+
+// Hue ambiance spot idV1:/lights/37
+Group gEettafel1 "Eettafel 1" <Light> (gEettafel) ["Lightbulb"]
+Dimmer Eettafel1_Color_Temperature "Color Temperature [%.0f %unit%]" <ColorLight> (gEettafel1) ["Control", "ColorTemperature"] {channel="hue:device:1:d03c25c9-a5d4-460e-b088-3d23d996bfe0:color-temperature"}
+Dimmer Eettafel1_Brightness "Brightness [%.0f %unit%]" <Light> (gEettafel1) ["Control", "Light"] {channel="hue:device:1:d03c25c9-a5d4-460e-b088-3d23d996bfe0:brightness"}
+
+// Hue ambiance spot idV1:/lights/38
+Group gEettafel2 "Eettafel 2" <Light> (gEettafel) ["Lightbulb"]
+Dimmer Eettafel2_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gEettafel2) ["Control", "ColorTemperature"] {channel="hue:device:1:9219e801-f747-4bae-88e1-4e8034b626c5:color-temperature"}
+Dimmer Eettafel2_Brightness "Brightness [%.0f %%]" <Light> (gEettafel2) ["Control", "Light"] {channel="hue:device:1:9219e801-f747-4bae-88e1-4e8034b626c5:brightness"}
+
+// Hue ambiance spot idV1:/lights/39
+Group gEettafel3 "Eettafel 3" <Light> (gEettafel) ["Lightbulb"]
+Dimmer Eettafel3_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gEettafel3) ["Control", "ColorTemperature"] {channel="hue:device:1:7fbcfb9d-fcac-4dde-93ed-b490cd2abc49:color-temperature"}
+Dimmer Eettafel3_Brightness "Brightness [%.0f %%]" <Light> (gEettafel3) ["Control", "Light"] {channel="hue:device:1:7fbcfb9d-fcac-4dde-93ed-b490cd2abc49:brightness"}
+
+
+// Hue tap switch idV1:/sensors/3
+Group gSwitchLichtKamer "Switch licht kamer" <WallSwitch> (gKamer) ["WallSwitch"]
+String SwitchLichtKamer_Button_Last_Event "Botton Last Event [%d]" (gSwitchLichtKamer) ["Point"] {channel="hue:device:1:9a1f95ec-8e83-45d0-ac1e-03b37ef8c8ed:button-last-event"}
+String SwitchLichtKamer_Last_Updated "Last Updated [%s]" <Time> (gSwitchLichtKamer) ["Point"] {channel="hue:device:1:9a1f95ec-8e83-45d0-ac1e-03b37ef8c8ed:last-updated"}
+
+
+
+// Room idV1:/groups/13
+Group:Switch:AND(ON,OFF) gLichtZolder "Licht zolder" <Light> (gZolder) ["Lightbulb"]
+Dimmer LichtZolder_Brightness "Brightness [%.0f %%]" <Light> (gLichtZolder) ["Control", "Light"] {channel="hue:room:1:b73e6460-8932-4ee7-8368-8ea89d334e2e:brightness"}
+
+// LivingColors idV1:/lights/1
+Group:Switch:AND(ON,OFF) gLampZolder "Lamp zolder" <Light> (gLichtZolder) ["Lightbulb"]
+Color LampZolder_Color "Color [%.0f]" <ColorLight> (gLampZolder) ["Control", "Light"] {channel="hue:device:1:90927fdf-8e4d-42cc-a1e9-3535f8bcebf8:color"}
+//Switch LampZolder_Power "Power" <switch> (gLampZolder) ["Control", "Light"] {channel="hue:device:1:90927fdf-8e4d-42cc-a1e9-3535f8bcebf8:color"}
+
+
+
+// Room idV1:/groups/7
+Group:Switch:AND(ON,OFF) gLichtJorn "Licht Jorn" <Light> (gJorn) ["Lightbulb"]
+Dimmer LichtJorn_Brightness "Brightness [%.0f %%]" <Light> (gLichtJorn) ["Control", "Light"] {channel="hue:room:1:5f49a29a-d28d-4881-b9d0-f26330e3af4d:brightness"}
+
+// Hue color lamp idV1:/lights/35
+Group:Switch:AND(ON,OFF) gLampJorn "Lamp Jorn" <Light> (gLichtJorn) ["Lightbulb"]
+Color LampJorn_Color "Color [%.0f]" <ColorLight> (gLampJorn) ["Control", "Light"] {channel="hue:device:1:897f45a9-ac56-4192-82e6-cda1f2b6b484:color"}
+Dimmer LampJorn_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gLampJorn) ["Control", "ColorTemperature"] {channel="hue:device:1:897f45a9-ac56-4192-82e6-cda1f2b6b484:color-temperature"}
+
+// Hue dimmer switch idV1:/sensors/10
+Group gSwitchJorn "Switch Jorn" <WallSwitch> (gJorn) ["WallSwitch"]
+String SwitchJorn_Button_Last_Event "Botton Last Event [%d]" (gSwitchJorn) ["Point"] {channel="hue:device:1:da2c513f-8665-4add-9111-93c58cac5eeb:button-last-event"}
+String SwitchJorn_Last_Updated "Last Updated [%s]" <Time> (gSwitchJorn) ["Point"] {channel="hue:device:1:da2c513f-8665-4add-9111-93c58cac5eeb:last-updated"}
+Number SwitchJorn_Battery_Level "Battery Level [%.0f %%]" <Battery> (gSwitchJorn) ["Measurement", "Energy"] {channel="hue:device:1:da2c513f-8665-4add-9111-93c58cac5eeb:battery-level"}
+Switch SwitchJorn_Low_Battery "Low Battery" <LowBattery> (gSwitchJorn) ["LowBattery", "Energy"] {channel="hue:device:1:da2c513f-8665-4add-9111-93c58cac5eeb:battery-low"}
+
+
+
+// Room idV1:/groups/9
+Group:Switch:AND(ON,OFF) gLichtLars "Licht Lars" <Light> (gLars) ["Lightbulb"]
+Dimmer LichtLars_Brightness "Brightness [%.0f %%]" <Light> (gLichtLars) ["Control", "Light"] {channel="hue:room:1:10102b4d-ad0e-4233-8c5c-3a6241e281ca:brightness"}
+
+// Hue color lamp idV1:/lights/34
+Group:Switch:AND(ON,OFF) gLampLars "Lamp Lars" <Light> (gLichtLars) ["Lightbulb"]
+Color LampLars_Color "Color [%.0f]" <ColorLight> (gLampLars) ["Control", "Light"] {channel="hue:device:1:8d319df1-602f-4132-b45a-f53f549ada3d:color"}
+Dimmer LampLars_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gLampLars) ["Control", "ColorTemperature"] {channel="hue:device:1:8d319df1-602f-4132-b45a-f53f549ada3d:color-temperature"}
+
+// Hue dimmer switch idV1:/sensors/13
+Group gSwitchLars "Switch Lars" <WallSwitch> (gLars) ["WallSwitch"]
+String SwitchLars_Button_Last_Event "Botton Last Event [%d]" (gSwitchLars) ["Point"] {channel="hue:device:1:e17e6f42-539a-4bba-bdfa-488f086df8d4:button-last-event"}
+String SwitchLars_Last_Updated "Last Updated [%s]" <Time> (gSwitchLars) ["Point"] {channel="hue:device:1:e17e6f42-539a-4bba-bdfa-488f086df8d4:last-updated"}
+Number SwitchLars_Battery_Level "Battery Level [%.0f %%]" <Battery> (gSwitchLars) ["Measurement", "Energy"] {channel="hue:device:1:e17e6f42-539a-4bba-bdfa-488f086df8d4:battery-level"}
+Switch SwitchLars_Low_Battery "Low Battery" <LowBattery> (gSwitchLars) ["LowBattery", "Energy"] {channel="hue:device:1:e17e6f42-539a-4bba-bdfa-488f086df8d4:battery-low"}
+
+
+
+// Room idV1:/groups/4
+Group:Switch:AND(ON,OFF) gKerstverlichting "Kerstverlichting" <Light> (gBeneden) ["Lightbulb"]
+Dimmer Kerstverlichting_Brightness "Brightness [%.0f %%]" <Light> (gKerstverlichting) ["Control", "Light"] {channel="hue:room:1:bffeb807-3dd1-4c03-86aa-700ebf707252:brightness"}
+
+// LivingWhites Plug idV1:/lights/6
+Group:Switch:AND(ON,OFF) gKerstboom "Kerstboom" <Light> (gKerstverlichting) ["Lightbulb"]
+Dimmer Kerstboom_Brightness "Brightness [%.0f %%]" <Light> (gKerstboom) ["Control", "Light"] {channel="hue:device:1:aef04f78-1ad2-4c81-9c3d-a8cb3e351de9:brightness"}
+
+// Hue Smart plug idV1:/lights/48
+Group:Switch:AND(ON,OFF) gKerstverlichting1 "Kerstverlichting 1" <Light> (gKerstverlichting) ["Lightbulb"]
+Switch Kerstverlichting1_Power "Power" <switch> (gKerstverlichting1) ["Control", "Light"] {channel="hue:device:1:9408a31c-ceac-42f9-ae33-0dd05c1d1056:switch"}
+
+// Hue Smart plug idV1:/lights/49
+Group:Switch:AND(ON,OFF) gKerstverlichting2 "Kerstverlichting 2" <Light> (gKerstverlichting) ["Lightbulb"]
+Switch Kerstverlichting2_Power "Power" <switch> (gKerstverlichting2) ["Switch", "Power"] {channel="hue:device:1:0e38d569-5fff-4e7c-b462-59d3d6e32ee9:switch"}
+
+// LivingWhites Plug idV1:/lights/3
+Group:Switch:AND(ON,OFF) gSchuur "Schuur" <Light> (gKerstverlichting) ["Lightbulb"]
+Dimmer Schuur_Brightness "Brightness [%.0f %%]" <Light> (gSchuur) ["Control", "Light"] {channel="hue:device:1:b9fa9384-25a9-4555-ae2e-a046a99b15fc:brightness"}
+
+
+// Room idV1:/groups/2
+Group:Switch:AND(ON,OFF) gLichtKamer "Licht kamer" <Light> (gKamer) ["Lightbulb"]
+Dimmer LichtKamer_Brightness "Brightness [%.0f %%]" <Light> (gLichtKamer) ["Control", "Light"] {channel="hue:device:1:8ef476d9-97eb-44ab-95ba-08aca7a15203:brightness"}
+
+// Hue color lamp idV1:/lights/2
+Group:Switch:AND(ON,OFF) gLampTVLinks "Lamp TV links" <Light> (gLichtKamer) ["Lightbulb"]
+Color LampTVLinks_Color "Color [%.0f]" <ColorLight> (gLampTVLinks) ["Control", "Light"] {channel="hue:device:1:9cb30ba2-d0f6-4dfe-836e-bd69440116bb:color"}
+//Dimmer LampTVLinks_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gLampTVLinks) ["Control", "ColorTemperature"] {channel="hue:device:1:9cb30ba2-d0f6-4dfe-836e-bd69440116bb:color-temperature"}
+
+// Hue color lamp idV1:/lights/27
+Group:Switch:AND(ON,OFF) gLampTVRechts "Lamp TV rechts" <Light> (gLichtKamer) ["Lightbulb"]
+Color LampTVRechts_Color "Color [%.0f]" <ColorLight> (gLampTVRechts) ["Control", "Light"] {channel="hue:device:1:dc026d29-9301-4236-aea7-8c68a87b1f15:color"}
+//Dimmer LampTVRechts_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gLampTVRechts) ["Control", "ColorTemperature"] {channel="hue:device:1:dc026d29-9301-4236-aea7-8c68a87b1f15:color-temperature"}
+
+// Extended color light idV1:/lights/25
+Group:Switch:AND(ON,OFF) gVloerlampKleur "Vloerlamp kleur" <Light> (gLichtKamer) ["Lightbulb"]
+Color VloerlampKleur_Color "Color [%.0f]" <ColorLight> (gVloerlampKleur) ["Control", "Light"] {channel="hue:device:1:78a563de-bfc1-4ecc-8613-dca0529fcad6:color"}
+//Dimmer VloerlampKleur_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gVloerlampKleur) ["Control", "ColorTemperature"] {channel="hue:device:1:78a563de-bfc1-4ecc-8613-dca0529fcad6:color-temperature"}
+
+// Dimmable light idV1:/lights/26
+Group:Switch:AND(ON,OFF) gVloerlampWit "Vloerlamp wit" <Light> (gLichtKamer) ["Lightbulb"]
+Dimmer VloerlampWit_Brightness "Brightness [%.0f %%]" <Light> (gVloerlampWit) ["Control", "Light"] {channel="hue:device:1:086e6248-44b1-48d3-a77b-9ba6b872ef49:brightness"}
+
+
+// Room idV1:/groups/16
+Group:Switch:AND(ON,OFF) gLichtTerras "Licht terras" <Light> (gTerras) ["Lightbulb"]
+//Dimmer LichtTerras_Brightness "Brightness [%.0f %%]" <Light> (gLichtTerras) ["Control", "Light"] {channel="hue:room:1:723dcd63-9415-472a-8aea-3c109d39fece:brightness"}
+
+// Dimmable light idV1:/lights/43
+Group:Switch:AND(ON,OFF) gOverkapping "Overkapping" <Light> (gLichtTerras) ["Lightbulb"]
+Dimmer Overkapping_Brightness "Brightness [%.0f %%]" <Light> (gOverkapping) ["Control", "Light"] {channel="hue:device:1:de971104-ae33-4bff-ac43-db9370831198:brightness"}
+
+// Zone idV1:/groups/17
+Group:Switch:AND(ON,OFF) gTerrasMuur "Terras muur" <Light> (gLichtTerras) ["Lightbulb"]
+//Dimmer TerrasMuur_Brightness "Brightness [%.0f %%]" <Light> (gTerrasMuur) ["Control", "Light"] {channel="hue:zone:1:c5fddc20-c699-4eef-9497-9130cbdec954:brightness"}
+
+
+// Dimmable light idV1:/lights/45
+Group:Switch:AND(ON,OFF) gTerrasMuur1 "Terras muur 1" <Light> (gTerrasMuur) ["Lightbulb"]
+Dimmer TerrasMuur1_Brightness "Brightness [%.0f %%]" <Light> (gTerrasMuur1) ["Control", "Light"] {channel="hue:device:1:9dea8204-a1e3-4b6f-a4e3-436c3a948cff:brightness"}
+
+// Dimmable light idV1:/lights/46
+Group:Switch:AND(ON,OFF) gTerrasMuur2 "Terras muur 2" <Light> (gTerrasMuur) ["Lightbulb"]
+Dimmer TerrasMuur2_Brightness "Brightness [%.0f %%]" <Light> (gTerrasMuur2) ["Control", "Light"] {channel="hue:device:1:98957809-acc4-4303-ac09-4adb1d50195e:brightness"}
+
+// Dimmable light idV1:/lights/44
+Group:Switch:AND(ON,OFF) gTerrasMuur3 "Terras muur 3" <Light> (gTerrasMuur) ["Lightbulb"]
+Dimmer TerrasMuur3_Brightness "Brightness [%.0f %%]" <Light> (gTerrasMuur3) ["Control", "Light"] {channel="hue:device:1:8e80e1f4-e1a8-4b54-9df8-9a85eac4ca51:brightness"}
+
+// Hue outdoor motion sensor idV1:/sensors/17
+Group gTerrasSensor "Terras sensor" <Motion> (gTerras) ["MotionDetector"]
+Switch TerrasSensor_Motion "Motion Detected" <Motion> (gTerrasSensor) ["Status", "Presence"] {channel="hue:device:1:3a7f847b-e823-4194-9878-b9fcf37e9a87:motion"}
+Number:Illuminance TerrasSensor_Illuminance "Illuminance" (gTerrasSensor) ["Measurement", "Light"] {channel="hue:device:1:3a7f847b-e823-4194-9878-b9fcf37e9a87:light-level"}
+Number:Temperature TerrasSensor_Temperature "Temperature [%.1f °C]" <Temperature> (gTerrasSensor) ["Measurement", "Temperature"] {channel="hue:device:1:3a7f847b-e823-4194-9878-b9fcf37e9a87:temperature"}
+Number TerrasSensor_Battery "Battery Level [%.0f %%]" <Battery> (gTerrasSensor) ["Measurement", "Energy"] {channel="hue:device:1:3a7f847b-e823-4194-9878-b9fcf37e9a87:battery-level"}
+Switch TerrasSensor_Low_Battery "Low Battery" <LowBattery> (gTerrasSensor) ["LowBattery", "Energy"] {channel="hue:device:1:3a7f847b-e823-4194-9878-b9fcf37e9a87:battery-low"}
+
+
+// Room idV1:/groups/8
+Group:Switch:AND(ON,OFF) gLichtOverloop "Licht overloop" <Light> (gOverloop) ["Lightbulb"]
+Dimmer LichtOverloop_Brightness "Brightness [%.0f %%]" <Light> (gLichtOverloop) ["Control", "Light"] {channel="hue:device:1:056a8ba3-b484-4820-a67a-919ad55d3c88:brightness"}
+
+// Hue color lamp idV1:/lights/36
+Group:Switch:AND(ON,OFF) gLampOverloop "Lamp overloop" <Light> (gLichtOverloop) ["Lightbulb"]
+Color LampOverloop_Color "Color [%.0f]" <ColorLight> (gLampOverloop) ["Control", "Light"] {channel="hue:device:1:d3ef8427-1163-410a-8925-e5df93acc5cc:color"}
+Dimmer LampOverloop_Color_Temperature "Color Temperature [%.0f]" <ColorLight> (gLampOverloop) ["Control", "ColorTemperature"] {channel="hue:device:1:d3ef8427-1163-410a-8925-e5df93acc5cc:color-temperature"}
+
+// Hue motion sensor idV1:/sensors/5
+Group gOverloopSensor "Overloop sensor" <Motion> (gOverloop) ["MotionDetector"]
+Switch OverloopSensor_Motion "Motion Detected" <Motion> (gOverloopSensor) ["Status", "Presence"] {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:motion"}
+Number:Illuminance OverloopSensor_Illuminance "Illuminance" (gOverloopSensor) ["Measurement", "Light"] {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:light-level"}
+Number:Temperature OverloopSensor_Temperature "Temperature [%.1f °C]" <Temperature> (gOverloopSensor) ["Measurement", "Temperature"] {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:temperature"}
+Number OverloopSensor_Battery "Battery Level [%.0f %%]" <Battery> (gOverloopSensor) ["Measurement", "Energy"] {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:battery-level"}
+Switch OverloopSensor_Low_Battery "Low Battery" <LowBattery> (gOverloopSensor) ["LowBattery", "Energy"] {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:battery-low"}
+
+
+//Thing zone f4709117-9075-4db0-9624-eec7b1991e89 "All lights" [resourceId="f4709117-9075-4db0-9624-eec7b1991e89"] // Zone idV1:/groups/0
+//Thing device c58024ba-4662-499b-813c-7e641820b8eb "On/Off plug 1" [resourceId="c58024ba-4662-499b-813c-7e641820b8eb"] // On/Off plug idV1:/lights/40
+//Thing room c0de69ae-167e-496f-be85-ff6771c30ef8 "Test" [resourceId="c0de69ae-167e-496f-be85-ff6771c30ef8"] // Room idV1:/groups/6
+//Thing room 2f0d3a65-a72b-43b3-b1bd-10d59dc39d1d "Pool" [resourceId="2f0d3a65-a72b-43b3-b1bd-10d59dc39d1d"] // Room idV1:/groups/14
+//Thing device 39492dfc-5084-41a7-9c02-8935ea1a6a03 "Hue Smart plug 1" [resourceId="39492dfc-5084-41a7-9c02-8935ea1a6a03"] // Hue Smart plug idV1:/lights/41
+//Thing device cfaa342a-ee22-4f12-bbd3-467efdb0e9aa "Hue Smart plug 2" [resourceId="cfaa342a-ee22-4f12-bbd3-467efdb0e9aa"] // Hue Smart plug idV1:/lights/47
+//Thing device 412492c4-1108-4318-9991-e79738e6d769 "Hue lightstrip outdoor 1" [resourceId="412492c4-1108-4318-9991-e79738e6d769"] // Hue lightstrip outdoor idV1:/lights/42
+//Thing device 60322c86-8db6-4592-bb20-fa61dbaf3a28 "Friends of Hue Switch 1" [resourceId="60322c86-8db6-4592-bb20-fa61dbaf3a28"] // Friends of Hue Switch idV1:/sensors/33

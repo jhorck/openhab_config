@@ -1,0 +1,13 @@
+
+Group gLGWebOSTV "LG webOS TV" <screen> (gKamer) ["Screen"]
+Switch LG_TV1_Power        "TV Power"         <television>   (gLGWebOSTV) ["Switch", "Power"]        { autoupdate="false", channel="lgwebos:WebOSTV:tv1:power" }
+Switch LG_TV1_Mute         "TV Mute"          <soundvolume>  (gLGWebOSTV) ["Switch", "SoundVolume"]  { channel="lgwebos:WebOSTV:tv1:mute"}
+Dimmer LG_TV1_Volume       "Volume [%d]"      <soundvolume>  (gLGWebOSTV) ["Control", "SoundVolume"] { channel="lgwebos:WebOSTV:tv1:volume" }
+Number LG_TV1_VolDummy     "VolumeUpDown"                    (gLGWebOSTV) 
+String LG_TV1_Channel      "Channel [%s]"                    (gLGWebOSTV) ["Point"]                  { channel="lgwebos:WebOSTV:tv1:channel" }
+Number LG_TV1_ChannelDummy "ChannelUpDown"                   (gLGWebOSTV) 
+String LG_TV1_Toast        "Toast"                           (gLGWebOSTV) ["Point"]                  { channel="lgwebos:WebOSTV:tv1:toast"}
+Switch LG_TV1_Stop         "Stop"                            (gLGWebOSTV) ["Point"]                  { autoupdate="false", channel="lgwebos:WebOSTV:tv1:mediaStop" }
+String LG_TV1_Application  "Application [%s]"                (gLGWebOSTV) ["Point"]                  { channel="lgwebos:WebOSTV:tv1:appLauncher"}
+String LG_TV1_RCButton     "RCButton"                        (gLGWebOSTV) ["Point"]                  { channel="lgwebos:WebOSTV:tv1:rcButton" }
+Player LG_TV1_Player       "Media Control"    <mediacontrol> (gLGWebOSTV) ["Control"]                { channel="lgwebos:WebOSTV:tv1:mediaPlayer"}
