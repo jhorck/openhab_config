@@ -1,0 +1,14 @@
+Thing kodi:kodi:htpc "Kodi" [ipAddress="192.168.188.7", port=9090, httpPort=8080] {
+    Channels:
+        Type pvr-open-tv : pvr-open-tv [
+            group="All channels"
+        ]
+        Type shownotification : error-notification [
+            title="openHAB - Error",
+            icon="error"
+        ]
+        Type shownotification : weather-notification [
+            title="openHAB - Weather",
+            icon="sun_clouds"
+        ]
+}
