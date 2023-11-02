@@ -1,0 +1,10 @@
+Bridge tr064:fritzbox:rootuid "Fritzbox" [ host="192.168.188.1", user="xxx", password="yyy",
+                                                         phonebookInterval="0" ] {
+    Thing subdeviceLan LAN "Fritzbox LANDevice"   [ uuid="uuid:75802409-bccb-40e7-8e6b-DC396F1053C1",
+                                                    macOnline="76:59:A7:D8:F9:EF # John",
+                                                              "2A:72:4C:95:0A:8B # Miriam",
+                                                              "D2:22:21:52:0D:0F # Jorn",
+                                                              "EE:63:97:B5:0E:0B # Lars"]  
+    Thing subdevice WAN "Fritzbox WANDevice"               [ uuid="uuid:75802409-bccb-40e7-8e6a-DC396F1053C1"]
+    Thing subdevice WANCon "Fritzbox WANConnectionDevice"  [ uuid="uuid:75802409-bccb-40e7-8e69-DC396F1053C1"]
+}

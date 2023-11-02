@@ -1,0 +1,6 @@
+Group gFritzbox7590 "FRITZ!Box 7590" <network> (gKamer) ["Equipment"]
+String Fritzbox_CallState     "Call State [%s]"               (gFritzbox7590) ["Point"] { channel="avmfritz:fritzbox:1:call_state" }
+Call   Fritzbox_IncomingCall  "Incoming call [%1$s to %2$s]"  (gFritzbox7590) ["Point"] { channel="avmfritz:fritzbox:1:incoming_call" } 
+Call   Fritzbox_OutgoingCall  "Outgoing call [%1$s to %2$s]"  (gFritzbox7590) ["Point"] { channel="avmfritz:fritzbox:1:outgoing_call" }
+Call   Fritzbox_ActiveCall    "Call established [%1$s]"       (gFritzbox7590) ["Point"] { channel="avmfritz:fritzbox:1:active_call" }
+//String Fritzbox_ApplyTemplate "Apply template"                (gFritzbox7590) ["Point"] { channel="avmfritz:fritzbox:1:apply_template" }

@@ -1,0 +1,2 @@
+Bridge avmfritz:fritzbox:1 "FRITZ!Box 7590" [ ipAddress="192.168.188.1", protocol="https", user="xxx", password="yyy" ] {
+}
