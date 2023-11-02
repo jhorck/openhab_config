@@ -1,0 +1,15 @@
+Group gSiemensOven "Siemens Oven" (gKeuken) ["Equipment"]
+Switch               Oven_Power               "Power"                                 <switch> (gSiemensOven) ["Switch", "Power"] { channel="homeconnect:oven:api_bridge_at_home:oven1:power_state" }
+Contact              Oven_DoorState           "Door State"                                     (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:door_state" }
+String               Oven_OperationState      "Operation State"                                (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:operation_state" }
+Switch               Oven_RemoteStartAllowed  "Remote Start Allowed"                           (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:remote_start_allowance_state" }
+Switch               Oven_RemoteControl       "Remote Control Activation State"                (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:remote_control_active_state" }
+String               Oven_ActiveProgram       "Active Program"                                 (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:active_program_state" }
+String               Oven_SelectedProgram     "Selected Program"                               (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:selected_program_state" }
+Number:Temperature   Oven_SetpointTemperature "Setpoint Temperature [%d %unit%]" <temperature> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:setpoint_temperature" }
+Number:Time          Oven_SelectedDuration    "Selected Duration [%d %unit%]"           <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:duration" }
+String               Oven_ProgramActions      "Program Actions [%s]"                           (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:basic_actions_state" }
+Number:Time          Oven_RemainingTime       "Remaining Program Time [%d %unit%]"      <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:remaining_program_time_state" }
+Number:Dimensionless Oven_ProgressState       "Progress State [%d %unit%]"                     (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:program_progress_state" }
+Number:Temperature   Oven_Temperature         "Cavity Temperature [%d %unit%]"   <temperature> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:oven_current_cavity_temperature" }
+Number:Time          Oven_ElapsedTime         "Elapsed Program Time [%d %unit%]"        <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:elapsed_program_time" }

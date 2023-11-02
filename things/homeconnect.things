@@ -1,0 +1,3 @@
+Bridge homeconnect:api_bridge:api_bridge_at_home "Home Connect API" [ clientId="xxx", clientSecret="yyy", simulator=false] {
+    Thing oven oven1 "Siemens Oven (SIEMENS-CM676G0S6-68A40E22EA2E)" [ haId="SIEMENS-CM676G0S6-68A40E22EA2E" ]
+}
