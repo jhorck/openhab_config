@@ -1,0 +1,344 @@
+{
+  "washing_machine_v4": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "washing_machine_v4",
+      "tags": [
+        "marketplace:116621"
+      ],
+      "props": {
+        "parameters": [
+          {
+            "description": "Title of the card",
+            "label": "Title",
+            "name": "title",
+            "required": false,
+            "type": "TEXT"
+          },
+          {
+            "description": "The card footer",
+            "label": "Footer",
+            "name": "footer",
+            "required": false,
+            "type": "TEXT"
+          },
+          {
+            "description": "Header text above washing machine",
+            "label": "Header",
+            "name": "header",
+            "required": false,
+            "type": "TEXT"
+          },
+          {
+            "description": "Expression that evaluates to minutes since the begin of washing",
+            "label": "Minutes running",
+            "name": "runtime",
+            "required": true,
+            "type": "TEXT"
+          },
+          {
+            "description": "Expression that evaluates to OFF, RUNNING or FINISHED",
+            "label": "State",
+            "name": "state",
+            "required": true,
+            "type": "TEXT"
+          },
+          {
+            "description": "Dryer mode: Set this to ON for a red dryer color scheme",
+            "label": "Dryer Mode",
+            "name": "dryer",
+            "required": false,
+            "type": "TEXT"
+          }
+        ],
+        "parameterGroups": []
+      },
+      "timestamp": "Oct 2, 2021, 9:24:59 PM",
+      "component": "f7-card",
+      "config": {
+        "title": "\u003d(props.title)"
+      },
+      "slots": {
+        "default": [
+          {
+            "component": "f7-card-content",
+            "config": {
+              "style": {
+                "height": "175px"
+              }
+            },
+            "slots": {
+              "default": [
+                {
+                  "component": "f7-row",
+                  "config": {
+                    "class": [
+                      "display-flex",
+                      "justify-content-center"
+                    ],
+                    "style": {
+                      "width": "100%"
+                    }
+                  },
+                  "slots": {
+                    "default": [
+                      {
+                        "component": "f7-col",
+                        "config": {
+                          "class": [
+                            "display-flex",
+                            "flex-direction-column",
+                            "align-items-center",
+                            "justify-content-space-evenly"
+                          ],
+                          "style": {
+                            "height": "100%",
+                            "width": "90px"
+                          }
+                        },
+                        "slots": {
+                          "default": [
+                            {
+                              "component": "f7-block-header",
+                              "slots": {
+                                "default": [
+                                  {
+                                    "component": "Label",
+                                    "config": {
+                                      "text": "\u003dprops.header"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "component": "f7-block",
+                              "config": {
+                                "class": [
+                                  "display-flex",
+                                  "flex-direction-column",
+                                  "align-items-center"
+                                ],
+                                "style": {
+                                  "background": "rgba(255,255,255,1)",
+                                  "border-radius": "2px 2px 4px 4px",
+                                  "box-shadow": "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
+                                  "height": "120px",
+                                  "width": "90px"
+                                }
+                              },
+                              "slots": {
+                                "default": [
+                                  {
+                                    "component": "f7-block",
+                                    "config": {
+                                      "class": [
+                                        "display-flex",
+                                        "justify-content-flex-end",
+                                        "align-items-center",
+                                        "flex-shrink-0",
+                                        "no-margin"
+                                      ],
+                                      "style": {
+                                        "border-bottom": "1pt solid lightgray",
+                                        "height": "23px",
+                                        "padding-right": "10px",
+                                        "width": "85px"
+                                      }
+                                    },
+                                    "slots": {
+                                      "default": [
+                                        {
+                                          "component": "f7-icon",
+                                          "config": {
+                                            "color": "gray",
+                                            "f7": "circle_fill",
+                                            "size": 10
+                                          }
+                                        },
+                                        {
+                                          "component": "f7-icon",
+                                          "config": {
+                                            "color": "gray",
+                                            "f7": "circle_fill",
+                                            "size": 10
+                                          }
+                                        },
+                                        {
+                                          "component": "f7-icon",
+                                          "config": {
+                                            "f7": "\u003dprops.state \u003d\u003d \"OFF\" ? \"circle_fill\" : \"sun_min\"",
+                                            "size": 10,
+                                            "style": {
+                                              "color": "\u003dprops.state \u003d\u003d \"OFF\" ? \"gray\" : \"red\""
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "component": "f7-block",
+                                    "config": {
+                                      "class": [
+                                        "display-flex",
+                                        "justify-content-center",
+                                        "align-items-center"
+                                      ],
+                                      "style": {
+                                        "border": "5pt solid lightgray",
+                                        "border-radius": "50%",
+                                        "height": "60px",
+                                        "margin-top": "7px",
+                                        "width": "60px"
+                                      }
+                                    },
+                                    "slots": {
+                                      "default": [
+                                        {
+                                          "component": "f7-block",
+                                          "config": {
+                                            "class": "custom-preloader-container-dummy",
+                                            "colorTheme": "\u003dprops.dryer \u003d\u003d \"ON\" ? \"red\" : \"lightblue\"",
+                                            "style": {
+                                              "--f7-preloader-color": "var(--f7-theme-color)",
+                                              "--f7-preloader-size": "50px",
+                                              "display": "\u003dprops.state \u003d\u003d \"RUNNING\" ? \"\" : \"none\"",
+                                              "left": "50%",
+                                              "margin": 0,
+                                              "padding": 0,
+                                              "position": "absolute",
+                                              "top": "50%",
+                                              "transform": "translate(-50%, -50%)"
+                                            }
+                                          },
+                                          "slots": {
+                                            "default": [
+                                              {
+                                                "component": "f7-block",
+                                                "config": {
+                                                  "class": "custom-preloader-dummy",
+                                                  "style": {
+                                                    "height": "var(--f7-preloader-size)",
+                                                    "margin": 0,
+                                                    "padding": 0,
+                                                    "width": "var(--f7-preloader-size)"
+                                                  }
+                                                },
+                                                "slots": {
+                                                  "default": [
+                                                    {
+                                                      "component": "f7-block",
+                                                      "config": {
+                                                        "class": "custom-preloader-inner-dummy",
+                                                        "style": {
+                                                          "height": "100%",
+                                                          "left": 0,
+                                                          "margin": 0,
+                                                          "padding": 0,
+                                                          "position": "absolute",
+                                                          "top": 0,
+                                                          "width": "100%"
+                                                        }
+                                                      },
+                                                      "slots": {
+                                                        "default": [
+                                                          {
+                                                            "component": "f7-block",
+                                                            "config": {
+                                                              "class": "custom-preloader-inner-circle-dummy",
+                                                              "style": {
+                                                                "animation": "aurora-preloader-rotate 1s linear infinite",
+                                                                "border": "calc(var(--f7-preloader-size)/8) solid var(--f7-preloader-color)",
+                                                                "border-radius": "50%",
+                                                                "border-top-color": "transparent",
+                                                                "box-sizing": "border-box",
+                                                                "height": "100%",
+                                                                "left": 0,
+                                                                "margin": 0,
+                                                                "padding": 0,
+                                                                "position": "absolute",
+                                                                "top": 0,
+                                                                "width": "100%"
+                                                              }
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "component": "f7-icon",
+                                          "config": {
+                                            "f7": "\u003dprops.state \u003d\u003d \"FINISHED\" ? \"circle_bottomthird_split\" : \"circle\"",
+                                            "size": 50,
+                                            "style": {
+                                              "border-radius": "50%",
+                                              "box-shadow": "0 0 16px 8px rgba(0, 0, 0, 0.25) inset",
+                                              "color": "\u003dprops.state \u003d\u003d \"OFF\" ? \"lightgray\" : (props.dryer \u003d\u003d \"ON\" ? \"orange\" : \"lightblue\")"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "component": "f7-block-header",
+                                          "config": {
+                                            "class": [
+                                              "no-margin"
+                                            ],
+                                            "style": {
+                                              "position": "absolute"
+                                            },
+                                            "visible": "\u003dprops.state \u003d\u003d \"RUNNING\""
+                                          },
+                                          "slots": {
+                                            "default": [
+                                              {
+                                                "component": "Label",
+                                                "config": {
+                                                  "style": {
+                                                    "color": "black"
+                                                  },
+                                                  "text": "\u003dMath.floor(props.runtime / 60) + \":\" + ((props.runtime % 60) \u003c 10 ? (\"0\" + props.runtime % 60) : (props.runtime % 60))"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "component": "f7-card-footer",
+            "slots": {
+              "default": [
+                {
+                  "component": "Label",
+                  "config": {
+                    "text": "\u003dprops.footer"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

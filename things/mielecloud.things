@@ -1,0 +1,3 @@
+Bridge mielecloud:account:openhab2 [ email="xxx", locale="en" ] {
+    Thing washing_machine yyy "Washing machine WEG375" [ deviceIdentifier="yyy"]
+}

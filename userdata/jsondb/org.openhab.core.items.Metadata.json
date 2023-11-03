@@ -468,5 +468,24 @@
       "value": "oh-toggle-card",
       "configuration": {}
     }
+  },
+  "widget:gWEG375": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gWEG375"
+        ],
+        "uid": "widget:gWEG375"
+      },
+      "value": "widget:washing_machine_v4",
+      "configuration": {
+        "footer": "\u003ditems.WEG375_ActiveProgram.state !\u003d \"UNDEF\" ? items.WEG375_ActiveProgram.state + \" \" + items.WEG375_TargetTemperature.state : \"\"",
+        "header": "\u003ditems.WEG375_ActiveProgram.state !\u003d \"UNDEF\" ? items.WEG375_ActiveProgram.state : \"\"",
+        "runtime": "\u003dMath.floor(items.WEG375_RemainingTime.state/60)",
+        "state": "\u003ditems.WEG375_RawOperationState.state \u003d\u003d 1 ? \"OFF\" : items.WEG375_RawOperationState.state \u003d\u003d 5 ? \"RUNNING\" : \"FINISHED\""
+      }
+    }
   }
 }
