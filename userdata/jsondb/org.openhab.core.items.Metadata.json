@@ -413,6 +413,34 @@
       "configuration": {}
     }
   },
+  "widget:gSiemensOven": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gSiemensOven"
+        ],
+        "uid": "widget:gSiemensOven"
+      },
+      "value": "widget:oven_v1",
+      "configuration": {
+        "actionGroupPopupItem": "",
+        "active": "Oven_Power",
+        "active_program": "Oven_ActiveProgram",
+        "curr_temp": "Oven_Temperature",
+        "door": "Oven_DoorState",
+        "elapsed_runtime": "Oven_ElapsedTime",
+        "item": "",
+        "operation_mode": "Oven_OperationState",
+        "progress": "Oven_ProgressState",
+        "remaining_runtime": "Oven_RemainingTime",
+        "remote_access": "Oven_RemoteControl",
+        "set_duration": "Oven_SelectedDuration",
+        "set_temp": "Oven_SetpointTemperature"
+      }
+    }
+  },
   "widget:gTerrasMuur": {
     "class": "org.openhab.core.items.Metadata",
     "value": {

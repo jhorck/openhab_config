@@ -24,5 +24,5 @@ Number:Temperature WEG375_TargetTemperature "Target Temperature [%d %unit%]"    
 Switch             WEG375_LightEnabled      "Light Enabled"                          <switch> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:light_switch" }
 Switch             WEG375_CanControlLight   "Can Control Light"                               (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:light_can_be_controlled" }
 Switch             WEG375_DoorSignal        "Door Signal"                                     (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:door_state" }
-Number:Volume      WEG375_WaterConsumption  "Current Water Consumption [%d %unit%]"   <water> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:water_consumption_current" }
+Number:Volume      WEG375_WaterConsumption  "Current Water Consumption [%d l]"        <water> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:water_consumption_current" }
 Number:Energy      WEG375_EnergyConsumption "Current Energy Consumption [%d %unit%]" <energy> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:energy_consumption_current" }
