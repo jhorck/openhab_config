@@ -1,0 +1,6 @@
+Bridge amazonechocontrol:account:account1 "Amazon Account" [discoverSmartHome=2, pollingIntervalSmartHomeAlexa=30, pollingIntervalSmartSkills=120]
+{
+    Thing echo   echo1 "Echo" [serialNumber="xxx"]
+    Thing echo   echo2 "Echo Dot" [serialNumber="yyy"]
+    Thing wha     wha1 "Amazon Überall" [serialNumber="zzz"]
+}

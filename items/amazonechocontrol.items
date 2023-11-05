@@ -1,0 +1,129 @@
+// Account
+String Amazon_SendMessage                "SendMessage"                           {channel="amazonechocontrol:account:account1:sendMessage"}
+
+Group gAlexa_Kamer "Amazon Echo" <player> (gKamer) ["Equipment"]
+
+// Player control
+Player Echo_Kamer_Player                 "Player"                                (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:player"}
+Dimmer Echo_Kamer_Volume                 "Volume [%.0f %%]" <soundvolume>        (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:volume"}
+Number Echo_Kamer_Treble                 "Treble"                                (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:equalizerTreble"}
+Number Echo_Kamer_Midrange               "Midrange"                              (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:equalizerMidrange"}
+Number Echo_Kamer_Bass                   "Bass"                                  (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:equalizerBass"}
+Switch Echo_Kamer_Shuffle                "Shuffle"                               (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:shuffle"}
+
+// Media channels
+Dimmer Echo_Kamer_MediaProgress          "Media progress"                        (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:mediaProgress"}
+Number:Time Echo_Kamer_MediaProgressTime "Media progress time [%d %unit%]"       (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:mediaProgressTime"}
+Number:Time Echo_Kamer_MediaLength       "Media length [%d %unit%]"              (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:mediaLength"}
+
+// Player Information
+String Echo_Kamer_ImageUrl               "Image URL"                             (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:imageUrl"}
+String Echo_Kamer_Title                  "Title"                                 (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:title"}
+String Echo_Kamer_Subtitle1              "Subtitle 1"                            (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:subtitle1"}
+String Echo_Kamer_Subtitle2              "Subtitle 2"                            (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:subtitle2"}
+String Echo_Kamer_ProviderDisplayName    "Provider"                              (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:providerDisplayName"}
+
+// Music provider and start command
+String Echo_Kamer_MusicProviderId        "Music Provider Id"                     (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:musicProviderId"}
+String Echo_Kamer_PlayMusicCommand       "Play music voice command (Write Only)" (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:playMusicVoiceCommand"}
+String Echo_Kamer_StartCommand           "Start Information"                     (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:startCommand"}
+
+// TuneIn Radio
+String Echo_Kamer_RadioStationId         "TuneIn Radio Station Id"               (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:radioStationId"}
+Switch Echo_Kamer_Radio                  "TuneIn Radio"                          (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:radio"}
+
+// Amazon Music
+String Echo_Kamer_AmazonMusicTrackId     "Amazon Music Track Id"                 (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:amazonMusicTrackId"}
+String Echo_Kamer_AmazonMusicPlayListId  "Amazon Music Playlist Id"              (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:amazonMusicPlayListId"}
+Switch Echo_Kamer_AmazonMusic            "Amazon Music"                          (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:amazonMusic"}
+
+// Bluetooth
+String Echo_Kamer_BluetoothMAC           "Bluetooth MAC Address" <bluetooth>     (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:bluetoothMAC"}
+Switch Echo_Kamer_Bluetooth              "Bluetooth"             <bluetooth>     (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:bluetooth"}
+String Echo_Kamer_BluetoothDeviceName    "Bluetooth Device"      <bluetooth>     (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:bluetoothDeviceName"}
+
+// Commands
+String Echo_Kamer_Announcement           "Announcement"                          (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:announcement"}
+String Echo_Kamer_TTS                    "Text to Speech"                        (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:textToSpeech"}
+Dimmer Echo_Kamer_TTS_Volume             "Text to Speech Volume"                 (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:textToSpeechVolume"}
+String Echo_Kamer_Remind                 "Remind"                                (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:remind"}
+String Echo_Kamer_PlayAlarmSound         "Play Alarm Sound"                      (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:playAlarmSound"}
+String Echo_Kamer_StartRoutine           "Start Routine"                         (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:startRoutine"}
+Dimmer Echo_Kamer_NotificationVolume     "Notification volume"                   (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:notificationVolume"}
+Switch Echo_Kamer_AscendingAlarm         "Ascending alarm"                       (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:ascendingAlarm"}
+
+// Feedbacks
+String Echo_Kamer_LastVoiceCommand       "Last voice command"                    (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:lastVoiceCommand"}
+DateTime Echo_Kamer_NextReminder         "Next reminder"                         (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:nextReminder"}
+DateTime Echo_Kamer_NextAlarm            "Next alarm"                            (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:nextAlarm"}
+DateTime Echo_Kamer_NextMusicAlarm       "Next music alarm"                      (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:nextMusicAlarm"}
+DateTime Echo_Kamer_NextTimer            "Next timer"                            (gAlexa_Kamer) ["Point"] {channel="amazonechocontrol:echo:account1:echo1:nextTimer"}
+
+
+Group gAlexa_Zolder "Amazon Echo Dot" <player> (gZolder) ["Equipment"]
+
+// Player control
+Player Echo_Zolder_Player                 "Player"                                (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:player"}
+Dimmer Echo_Zolder_Volume                 "Volume [%.0f %%]" <soundvolume>        (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:volume"}
+Number Echo_Zolder_Treble                 "Treble"                                (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:equalizerTreble"}
+Number Echo_Zolder_Midrange               "Midrange"                              (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:equalizerMidrange"}
+Number Echo_Zolder_Bass                   "Bass"                                  (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:equalizerBass"}
+Switch Echo_Zolder_Shuffle                "Shuffle"                               (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:shuffle"}
+
+// Media channels
+Dimmer Echo_Zolder_MediaProgress          "Media progress"                        (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:mediaProgress"}
+Number:Time Echo_Zolder_MediaProgressTime "Media progress time [%d %unit%]"       (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:mediaProgressTime"}
+Number:Time Echo_Zolder_MediaLength       "Media length [%d %unit%]"              (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:mediaLength"}
+
+// Player Information
+String Echo_Zolder_ImageUrl               "Image URL"                             (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:imageUrl"}
+String Echo_Zolder_Title                  "Title"                                 (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:title"}
+String Echo_Zolder_Subtitle1              "Subtitle 1"                            (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:subtitle1"}
+String Echo_Zolder_Subtitle2              "Subtitle 2"                            (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:subtitle2"}
+String Echo_Zolder_ProviderDisplayName    "Provider"                              (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:providerDisplayName"}
+
+// Music provider and start command
+String Echo_Zolder_MusicProviderId        "Music Provider Id"                     (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:musicProviderId"}
+String Echo_Zolder_PlayMusicCommand       "Play music voice command (Write Only)" (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:playMusicVoiceCommand"}
+String Echo_Zolder_StartCommand           "Start Information"                     (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:startCommand"}
+
+// TuneIn Radio
+String Echo_Zolder_RadioStationId         "TuneIn Radio Station Id"               (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:radioStationId"}
+Switch Echo_Zolder_Radio                  "TuneIn Radio"                          (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:radio"}
+
+// Amazon Music
+String Echo_Zolder_AmazonMusicTrackId     "Amazon Music Track Id"                 (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:amazonMusicTrackId"}
+String Echo_Zolder_AmazonMusicPlayListId  "Amazon Music Playlist Id"              (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:amazonMusicPlayListId"}
+Switch Echo_Zolder_AmazonMusic            "Amazon Music"                          (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:amazonMusic"}
+
+// Bluetooth
+String Echo_Zolder_BluetoothMAC           "Bluetooth MAC Address" <bluetooth>     (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:bluetoothMAC"}
+Switch Echo_Zolder_Bluetooth              "Bluetooth"             <bluetooth>     (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:bluetooth"}
+String Echo_Zolder_BluetoothDeviceName    "Bluetooth Device"      <bluetooth>     (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:bluetoothDeviceName"}
+
+// Commands
+String Echo_Zolder_Announcement           "Announcement"                          (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:announcement"}
+String Echo_Zolder_TTS                    "Text to Speech"                        (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:textToSpeech"}
+Dimmer Echo_Zolder_TTS_Volume             "Text to Speech Volume"                 (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:textToSpeechVolume"}
+String Echo_Zolder_Remind                 "Remind"                                (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:remind"}
+String Echo_Zolder_PlayAlarmSound         "Play Alarm Sound"                      (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:playAlarmSound"}
+String Echo_Zolder_StartRoutine           "Start Routine"                         (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:startRoutine"}
+Dimmer Echo_Zolder_NotificationVolume     "Notification volume"                   (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:notificationVolume"}
+Switch Echo_Zolder_AscendingAlarm         "Ascending alarm"                       (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:ascendingAlarm"}
+
+// Feedbacks
+String Echo_Zolder_LastVoiceCommand       "Last voice command"                    (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:lastVoiceCommand"}
+DateTime Echo_Zolder_NextReminder         "Next reminder"                         (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:nextReminder"}
+DateTime Echo_Zolder_NextAlarm            "Next alarm"                            (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:nextAlarm"}
+DateTime Echo_Zolder_NextMusicAlarm       "Next music alarm"                      (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:nextMusicAlarm"}
+DateTime Echo_Zolder_NextTimer            "Next timer"                            (gAlexa_Zolder) ["Point"] {channel="amazonechocontrol:echo:account1:echo2:nextTimer"}
+
+
+// Flashbriefings
+Switch FlashBriefing_Technical_Save            "Save (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:save"}
+Switch FlashBriefing_Technical_Active          "Active"                                                    {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:active"}
+String FlashBriefing_Technical_Play            "Play (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:playOnDevice"}
+
+//Switch FlashBriefing_LifeStyle_Save            "Save (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing2:save"}
+//Switch FlashBriefing_LifeStyle_Active          "Active"                                                    {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing2:active"}
+//String FlashBriefing_LifeStyle_Play            "Play (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing2:playOnDevice"}

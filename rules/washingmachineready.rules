@@ -1,0 +1,7 @@
+rule "Play Washing machine ready"
+when
+    Item WEG375_Finished changed from OFF to ON
+then
+    Echo_Kamer_TTS_Volume.sendCommand(70)
+    Echo_Kamer_TTS.sendCommand("Miriam, die Wäsche ist fertig!")
+end
