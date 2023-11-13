@@ -1,0 +1,11 @@
+Bridge mqtt:broker:smartmeter "MQTT Broker Smartmeter" [ host="192.168.188.105", secure=false ]
+
+Thing mqtt:topic:smartmeter:smartmeter "Smartmeter" (mqtt:broker:smartmeter) {
+    Channels:
+    Type string : smartmeter_manufacturer_id "Manufacturer ID" [ stateTopic="smartmeter/mains/sensor/1/obis/1-0:96.50.1/1/value" ]
+    Type string : smartmeter_device_id       "Device ID"       [ stateTopic="smartmeter/mains/sensor/1/obis/1-0:96.1.0/255/value" ]
+    Type number : smartmeter_total_positive  "Total positive"  [ stateTopic="smartmeter/mains/sensor/1/obis/1-0:1.8.0/255/value", unit="Wh" ]
+    Type number : smartmeter_total_negative  "Total negative"  [ stateTopic="smartmeter/mains/sensor/1/obis/1-0:2.8.0/255/value", unit="Wh" ]
+    Type number : smartmeter_actual          "Actual"          [ stateTopic="smartmeter/mains/sensor/1/obis/1-0:16.7.0/255/value", unit="W" ]
+    Type number : smartmeter_gas             "Gas pulse count" [ stateTopic="smartmeter/gas/sensor/1/total/value", unit="m³" ]
+}

@@ -441,6 +441,22 @@
       }
     }
   },
+  "widget:gSmartmeter": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gSmartmeter"
+        ],
+        "uid": "widget:gSmartmeter"
+      },
+      "value": " ",
+      "configuration": {
+        "item": "Smartmeter_Actual"
+      }
+    }
+  },
   "widget:gTerrasMuur": {
     "class": "org.openhab.core.items.Metadata",
     "value": {

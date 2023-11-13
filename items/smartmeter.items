@@ -1,0 +1,10 @@
+Group gSmartmeter "Smartmeter" <energy> (gKelder) ["Equipment"]
+String        Smartmeter_Manufacturer_ID   "Manufacturer ID [%s]"                  (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_manufacturer_id" }
+String        Smartmeter_Device_ID         "Device ID [%s]"                        (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_device_id" }
+Number:Energy Smartmeter_Total_Positive    "Total positive [%.0f %unit%]" <energy> (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_total_positive" }
+Number:Energy Smartmeter_Total_Negative    "Total negative [%.0f %unit%]" <energy> (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_total_negative" }
+Number:Power  Smartmeter_Actual            "Actual [%.0f %unit%]"         <energy> (gSmartmeter) ["Measurement", "Energy"] { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_actual" }
+Number:Volume Smartmeter_Gas_Pulse_Count   "Gas pulse count [%.2f %unit%]"   <gas> (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_gas" }
+Number:Volume Smartmeter_Gasmeter          "Gasmeter [%.2f %unit%]"          <gas> (gSmartmeter) ["Point"]
+Number:Volume Smartmeter_Gasmeter_Heating  "Gasmeter heating [%.2f %unit%]"  <gas> (gSmartmeter) ["Point"]
+Number:Volume Smartmeter_Gasmeter_Tapwater "Gasmeter tapwater [%.2f %unit%]" <gas> (gSmartmeter) ["Point"]
