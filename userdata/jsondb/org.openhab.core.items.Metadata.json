@@ -1,4 +1,42 @@
 {
+  "listWidget:GX_AcPowerSetpoint": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "listWidget",
+          "GX_AcPowerSetpoint"
+        ],
+        "uid": "listWidget:GX_AcPowerSetpoint"
+      },
+      "value": "oh-stepper-item",
+      "configuration": {
+        "max": 100.0,
+        "min": -100.0,
+        "raised": true,
+        "step": 10.0
+      }
+    }
+  },
+  "listWidget:GX_MaxDischargePower": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "listWidget",
+          "GX_MaxDischargePower"
+        ],
+        "uid": "listWidget:GX_MaxDischargePower"
+      },
+      "value": "oh-stepper-item",
+      "configuration": {
+        "max": 600.0,
+        "min": 0.0,
+        "raised": true,
+        "step": 50.0
+      }
+    }
+  },
   "widget:TerrasSensor_Low_Battery": {
     "class": "org.openhab.core.items.Metadata",
     "value": {
@@ -552,6 +590,22 @@
       }
     }
   },
+  "widget:gSolarSun": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gSolarSun"
+        ],
+        "uid": "widget:gSolarSun"
+      },
+      "value": " ",
+      "configuration": {
+        "item": "Solar_Radiation"
+      }
+    }
+  },
   "widget:gTerrasMuur": {
     "class": "org.openhab.core.items.Metadata",
     "value": {
@@ -621,6 +675,27 @@
       "value": "oh-toggle-card",
       "configuration": {
         "item": "TerrasSensor_Motion"
+      }
+    }
+  },
+  "widget:gVenus": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gVenus"
+        ],
+        "uid": "widget:gVenus"
+      },
+      "value": "oh-gauge-card",
+      "configuration": {
+        "action": "group",
+        "actionGroupPopupItem": "gVenus",
+        "item": "GX_SolarPower",
+        "max": 3000.0,
+        "min": 0.0,
+        "type": "semicircle"
       }
     }
   },

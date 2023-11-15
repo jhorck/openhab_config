@@ -1,4 +1,72 @@
 {
+  "Solar_day": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "channelUID": "astro:sun:solar:rise#event",
+            "event": "START",
+            "thingUID": "astro:sun:solar"
+          },
+          "type": "core.ChannelEventTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "command": "600",
+            "itemName": "GX_MaxDischargePower"
+          },
+          "type": "core.ItemCommandAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "Solar_day",
+      "name": "Solar day",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "Solar_night": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "channelUID": "astro:sun:solar:set#event",
+            "event": "START",
+            "thingUID": "astro:sun:solar"
+          },
+          "type": "core.ChannelEventTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "command": "250",
+            "itemName": "GX_MaxDischargePower"
+          },
+          "type": "core.ItemCommandAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "Solar_night",
+      "name": "Solar night",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
   "UpdateGasmeter": {
     "class": "org.openhab.core.automation.dto.RuleDTO",
     "value": {
@@ -63,6 +131,38 @@
       "configDescriptions": [],
       "uid": "Update_Gasmeter",
       "name": "Update Gasmeter",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "VictronMQTTKeepAlive": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "cronExpression": "0/30 * * * * ? *"
+          },
+          "type": "timer.GenericCronTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "script": "val actions \u003d getActions(\"mqtt\", \"mqtt:broker:victron\")\nactions.publishMQTT(\"R/c8df84d3a80c/system/0/Serial\", \"\")\nlogDebug(\"Solar\", \"CCGX MQTT Keep Alive Timer fired!!\")\n",
+            "type": "application/vnd.openhab.dsl.rule"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "VictronMQTTKeepAlive",
+      "name": "Victron MQTT keep alive",
       "tags": [],
       "visibility": "VISIBLE"
     }
