@@ -1,4 +1,4 @@
-Group   gFritzbox "FRITZ!Box" <router> (gKamer) ["Equipment"]
+Group   gFritzbox "FRITZ!Box" <router> (gKamer) ["NetworkAppliance"]
 
 // TR064 Fritzbox
 Number:Time Fritzbox_Uptime    "Uptime [%s]" (gFritzbox) ["Point"] { channel="tr064:fritzbox:rootuid:uptime" }
@@ -11,7 +11,7 @@ Switch Fritzbox_WiFi_5_GHz  "WiFi 5 GHz"   <network> (gFritzbox) ["Point"] { cha
 Switch Fritzbox_WiFi_Guest  "WiFi Guest"   <network> (gFritzbox) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:wifiGuestEnable" }
 
 // John
-Group gSamsungJohn "Samsung John" <man_3> (gFritzbox) ["Equipment"]
+Group gSamsungJohn "Samsung John" <man_3> (gFritzbox) ["Smartphone"]
 Switch Fritzbox_John_Online      "Online"                                  <switch> (gSamsungJohn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnline_76_3A59_3AA7_3AD8_3AF9_3AEF" }
 String Fritzbox_John_IP          "IP Address [%s]"                                  (gSamsungJohn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnlineIpAddress_76_3A59_3AA7_3AD8_3AF9_3AEF" }
 Number Fritzbox_John_24_Strength "2.4 GHz Signal Strength [%d]"  <qualityofservice> (gSamsungJohn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSignalStrength1_76_3A59_3AA7_3AD8_3AF9_3AEF" }
@@ -20,7 +20,7 @@ Number Fritzbox_John_5_Strength  "5 GHz Signal Strength [%d]"    <qualityofservi
 Number:DataTransferRate Fritzbox_John_5_Speed  "5 GHz WiFi Speed [%d %unit%]"       (gSamsungJohn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSpeed2_76_3A59_3AA7_3AD8_3AF9_3AEF" }
 
 // Miriam
-Group gSamsungMiriam "Samsung Miriam" <woman_3> (gFritzbox) ["Equipment"]
+Group gSamsungMiriam "Samsung Miriam" <woman_3> (gFritzbox) ["Smartphone"]
 Switch Fritzbox_Miriam_Online      "Online"                                  <switch> (gSamsungMiriam) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnline_2A_3A72_3A4C_3A95_3A0A_3A8B" }
 String Fritzbox_Miriam_IP          "IP Address [%s]"                                  (gSamsungMiriam) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnlineIpAddress_2A_3A72_3A4C_3A95_3A0A_3A8B" }
 Number Fritzbox_Miriam_24_Strength "2.4 GHz Signal Strength [%d]"  <qualityofservice> (gSamsungMiriam) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSignalStrength1_2A_3A72_3A4C_3A95_3A0A_3A8B" }
@@ -29,7 +29,7 @@ Number Fritzbox_Miriam_5_Strength  "5 GHz Signal Strength [%d]"    <qualityofser
 Number:DataTransferRate Fritzbox_Miriam_5_Speed  "5 GHz WiFi Speed [%d %unit%]"       (gSamsungMiriam) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSpeed2_2A_3A72_3A4C_3A95_3A0A_3A8B" }
 
 // Jorn
-Group gSamsungJorn "Samsung Jorn" <boy_3> (gFritzbox) ["Equipment"]
+Group gSamsungJorn "Samsung Jorn" <boy_3> (gFritzbox) ["Smartphone"]
 Switch Fritzbox_Jorn_Online      "Online"                                  <switch> (gSamsungJorn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnline_D2_3A22_3A21_3A52_3A0D_3A0F" }
 String Fritzbox_Jorn_IP          "IP Address [%s]"                                  (gSamsungJorn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnlineIpAddress_D2_3A22_3A21_3A52_3A0D_3A0F" }
 Number Fritzbox_Jorn_24_Strength "2.4 GHz Signal Strength [%d]"  <qualityofservice> (gSamsungJorn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSignalStrength1_D2_3A22_3A21_3A52_3A0D_3A0F" }
@@ -38,7 +38,7 @@ Number Fritzbox_Jorn_5_Strength  "5 GHz Signal Strength [%d]"    <qualityofservi
 Number:DataTransferRate Fritzbox_Jorn_5_Speed  "5 GHz WiFi Speed [%d %unit%]"       (gSamsungJorn) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSpeed2_D2_3A22_3A21_3A52_3A0D_3A0F" }
 
 // Lars
-Group gSamsungLars "Samsung Lars" <boy_3> (gFritzbox) ["Equipment"]
+Group gSamsungLars "Samsung Lars" <boy_3> (gFritzbox) ["Smartphone"]
 Switch Fritzbox_Lars_Online      "Online"                                  <switch> (gSamsungLars) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnline_EE_3A63_3A97_3AB5_3A0E_3A0B" }
 String Fritzbox_Lars_IP          "IP Address [%s]"                                  (gSamsungLars) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macOnlineIpAddress_EE_3A63_3A97_3AB5_3A0E_3A0B" }
 Number Fritzbox_Lars_24_Strength "2.4 GHz Signal Strength [%d]"  <qualityofservice> (gSamsungLars) ["Point"] { channel="tr064:subdeviceLan:rootuid:LAN:macSignalStrength1_EE_3A63_3A97_3AB5_3A0E_3A0B" }
@@ -48,7 +48,7 @@ Number:DataTransferRate Fritzbox_Lars_5_Speed  "5 GHz WiFi Speed [%d %unit%]"   
 
 
 // TR064 Fritzbox WAN Device
-Group gFritzboxWAN "WAN Device" <network> (gFritzbox) ["Equipment"]
+Group gFritzboxWAN "WAN Device" <network> (gFritzbox) ["NetworkAppliance"]
 String                  Fritzbox_WAN_AccessType      "Access Type"                           (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:wanAccessType" }
 String                  Fritzbox_WAN_LinkStatus      "Link Status"                           (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:wanPhysicalLinkStatus" }
 Number:DataTransferRate Fritzbox_WAN_DownMaxRate     "Max Downstream Rate [%d %unit%]"       (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:wanMaxDownstreamRate" }
@@ -73,7 +73,7 @@ Number:DataTransferRate Fritzbox_WAN_UpCurRate       "Current Upstream Rate [%d 
 
 
 // TR064 Fritzbox WAN Connection
-Group gFritzboxWANConnection "WAN Connection" <network> (gFritzbox) ["Equipment"]
+Group gFritzboxWANConnection "WAN Connection" <network> (gFritzbox) ["NetworkAppliance"]
 String      Fritzbox_WAN_IP         "WAN IP Address [%s]"        (gFritzboxWANConnection) ["Point"] { channel="tr064:subdevice:rootuid:WANCon:wanIpAddress" }
 String      Fritzbox_WAN_Status     "Connection Status [%s]"     (gFritzboxWANConnection) ["Point"] { channel="tr064:subdevice:rootuid:WANCon:wanConnectionStatus" }
 Number:Time Fritzbox_WAN_Uptime     "Uptime [%s]"                (gFritzboxWANConnection) ["Point"] { channel="tr064:subdevice:rootuid:WANCon:uptime" }

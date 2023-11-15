@@ -1,0 +1,18 @@
+Bridge mqtt:broker:gastherme "MQTT Broker Gastherme" [ host="192.168.188.34", secure=false ]
+
+Thing mqtt:topic:gastherme:gastherme "Gastherme" (mqtt:broker:gastherme) {
+    Channels:
+    Type switch : gastherme_flamme                  "Flamme"                  [ stateTopic="therme/flamme", off=0, on=1 ]
+    Type switch : gastherme_pumpe                   "Pumpe"                   [ stateTopic="therme/pumpe", off=0, on=1 ]
+    Type switch : gastherme_speicherladung          "Speicherladung"          [ stateTopic="therme/speicherladung", off=0, on=1 ]
+    Type switch : gastherme_winterbetrieb           "Winterbetrieb"           [ stateTopic="therme/winterbetrieb", off=0, on=1 ]
+    Type switch : gastherme_heizbetrieb             "Heizbetrieb"             [ stateTopic="regler/heizbetrieb", off=0, on=1 ]
+    Type number : gastherme_stoerungsmeldung        "Störungsmeldung"         [ stateTopic="therme/störungsmeldung" ]
+    Type number : gastherme_aussentemperatur        "Aussentemperatur"        [ stateTopic="therme/außentemperatur", unit="°C" ]
+    Type number : gastherme_speichertemperatur_ist  "Speichertemperatur ist"  [ stateTopic="therme/speichertemperatur/ist", unit="°C" ]
+    Type number : gastherme_speichertemperatur_soll "Speichertemperatur soll" [ stateTopic="regler/speichertemperatur/soll", unit="°C" ]
+    Type number : gastherme_speichertemperatur_max  "Speichertemperatur max"  [ stateTopic="therme/speichertemperatur/max", unit="°C" ]
+    Type number : gastherme_vorlauftemperatur_ist   "Vorlauftemperatur ist"   [ stateTopic="therme/vorlauftemperatur/ist", unit="°C" ]
+    Type number : gastherme_vorlauftemperatur_soll  "Vorlauftemperatur soll"  [ stateTopic="regler/vorlauftemperatur/soll", unit="°C" ]
+    Type number : gastherme_vorlauftemperatur_max   "Vorlauftemperatur max"   [ stateTopic="therme/vorlauftemperatur/max", unit="°C" ]
+}

@@ -1,4 +1,4 @@
-Group gMarantzSR5010 "Marantz SR5010" <receiver> (gKamer) ["Equipment"]
+Group gMarantzSR5010 "Marantz SR5010" <receiver> (gKamer) ["Receiver"]
 Switch Marantz_Power          "Power"                 <switch>           (gMarantzSR5010) ["Point"] {channel="denonmarantz:avr:0006782c3f65:general#power"}
 Switch Marantz_Main_Power     "Power (zone)"          <switch>           (gMarantzSR5010) ["Point"] {channel="denonmarantz:avr:0006782c3f65:mainZone#power"}
 Dimmer Marantz_Main_Volume    "Volume"                <soundvolume>      (gMarantzSR5010) ["Point"] {channel="denonmarantz:avr:0006782c3f65:mainZone#volume"}

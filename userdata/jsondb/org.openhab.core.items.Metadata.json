@@ -97,6 +97,40 @@
       "configuration": {}
     }
   },
+  "widget:gGastherme": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gGastherme"
+        ],
+        "uid": "widget:gGastherme"
+      },
+      "value": "oh-gauge-card",
+      "configuration": {
+        "action": "popup",
+        "actionModal": "page:Gastherme",
+        "item": "Gastherme_Vorlauftemperatur_ist",
+        "max": 90.0,
+        "min": 0.0
+      }
+    }
+  },
+  "widget:gKerstboom": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gKerstboom"
+        ],
+        "uid": "widget:gKerstboom"
+      },
+      "value": "oh-toggle-card",
+      "configuration": {}
+    }
+  },
   "widget:gKerstverlichting": {
     "class": "org.openhab.core.items.Metadata",
     "value": {
@@ -120,6 +154,20 @@
           "gKerstverlichting1"
         ],
         "uid": "widget:gKerstverlichting1"
+      },
+      "value": "oh-toggle-card",
+      "configuration": {}
+    }
+  },
+  "widget:gKerstverlichting2": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gKerstverlichting2"
+        ],
+        "uid": "widget:gKerstverlichting2"
       },
       "value": "oh-toggle-card",
       "configuration": {}
@@ -337,6 +385,22 @@
       "configuration": {}
     }
   },
+  "widget:gMarantzSR5010": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gMarantzSR5010"
+        ],
+        "uid": "widget:gMarantzSR5010"
+      },
+      "value": "oh-toggle-card",
+      "configuration": {
+        "item": "Marantz_Main_Power"
+      }
+    }
+  },
   "widget:gNetatmoBinnen": {
     "class": "org.openhab.core.items.Metadata",
     "value": {
@@ -381,7 +445,8 @@
       },
       "value": " ",
       "configuration": {
-        "actionGroupPopupItem": "Indoor2_Temperature"
+        "actionGroupPopupItem": "Indoor2_Temperature",
+        "item": "Indoor2_Temperature"
       }
     }
   },
@@ -399,6 +464,22 @@
       "configuration": {}
     }
   },
+  "widget:gOverloopSensor": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gOverloopSensor"
+        ],
+        "uid": "widget:gOverloopSensor"
+      },
+      "value": "oh-toggle-card",
+      "configuration": {
+        "item": "OverloopSensor_Motion"
+      }
+    }
+  },
   "widget:gRaamVoor": {
     "class": "org.openhab.core.items.Metadata",
     "value": {
@@ -408,6 +489,20 @@
           "gRaamVoor"
         ],
         "uid": "widget:gRaamVoor"
+      },
+      "value": "oh-toggle-card",
+      "configuration": {}
+    }
+  },
+  "widget:gSchuur": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gSchuur"
+        ],
+        "uid": "widget:gSchuur"
       },
       "value": "oh-toggle-card",
       "configuration": {}
@@ -430,13 +525,13 @@
         "active_program": "Oven_ActiveProgram",
         "curr_temp": "Oven_Temperature",
         "door": "Oven_DoorState",
-        "elapsed_runtime": "Oven_ElapsedTime",
+        "elapsed_runtime": "Oven_ElapsedTimeMin",
         "item": "",
         "operation_mode": "Oven_OperationState",
         "progress": "Oven_ProgressState",
-        "remaining_runtime": "Oven_RemainingTime",
+        "remaining_runtime": "Oven_RemainingTimeMin",
         "remote_access": "Oven_RemoteControl",
-        "set_duration": "Oven_SelectedDuration",
+        "set_duration": "Oven_SelectedDurationMin",
         "set_temp": "Oven_SetpointTemperature"
       }
     }
@@ -511,6 +606,22 @@
       },
       "value": "oh-toggle-card",
       "configuration": {}
+    }
+  },
+  "widget:gTerrasSensor": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "widget",
+          "gTerrasSensor"
+        ],
+        "uid": "widget:gTerrasSensor"
+      },
+      "value": "oh-toggle-card",
+      "configuration": {
+        "item": "TerrasSensor_Motion"
+      }
     }
   },
   "widget:gWEG375": {

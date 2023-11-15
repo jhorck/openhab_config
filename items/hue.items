@@ -184,6 +184,12 @@ Dimmer TerrasMuur2_Brightness "Brightness [%.0f %%]" <Light> (gTerrasMuur2) ["Co
 Group:Switch:AND(ON,OFF) gTerrasMuur3 "Terras muur 3" <Light> (gTerrasMuur) ["Lightbulb"]
 Dimmer TerrasMuur3_Brightness "Brightness [%.0f %%]" <Light> (gTerrasMuur3) ["Control", "Light"] {channel="hue:device:1:8e80e1f4-e1a8-4b54-9df8-9a85eac4ca51:brightness"}
 
+// Friends of Hue Switch idV1:/sensors/33
+Group gSwitchTerras "Switch terras" <WallSwitch> (gTerras) ["WallSwitch"]
+String SwitchTerras_Button_Last_Event "Botton Last Event [%d]" (gSwitchTerras) ["Point"] {channel="hue:device:1:60322c86-8db6-4592-bb20-fa61dbaf3a28:button-last-event"}
+String SwitchTerras_Last_Updated "Last Updated [%s]" <Time> (gSwitchTerras) ["Point"] {channel="hue:device:1:60322c86-8db6-4592-bb20-fa61dbaf3a28:last-updated"}
+
+
 // Hue outdoor motion sensor idV1:/sensors/17
 Group gTerrasSensor "Terras sensor" <Motion> (gTerras) ["MotionDetector"]
 Switch TerrasSensor_Motion "Motion Detected" <Motion> (gTerrasSensor) ["Status", "Presence"] {channel="hue:device:1:3a7f847b-e823-4194-9878-b9fcf37e9a87:motion"}
@@ -218,4 +224,3 @@ Switch OverloopSensor_Low_Battery "Low Battery" <LowBattery> (gOverloopSensor) [
 //Thing device 39492dfc-5084-41a7-9c02-8935ea1a6a03 "Hue Smart plug 1" [resourceId="39492dfc-5084-41a7-9c02-8935ea1a6a03"] // Hue Smart plug idV1:/lights/41
 //Thing device cfaa342a-ee22-4f12-bbd3-467efdb0e9aa "Hue Smart plug 2" [resourceId="cfaa342a-ee22-4f12-bbd3-467efdb0e9aa"] // Hue Smart plug idV1:/lights/47
 //Thing device 412492c4-1108-4318-9991-e79738e6d769 "Hue lightstrip outdoor 1" [resourceId="412492c4-1108-4318-9991-e79738e6d769"] // Hue lightstrip outdoor idV1:/lights/42
-//Thing device 60322c86-8db6-4592-bb20-fa61dbaf3a28 "Friends of Hue Switch 1" [resourceId="60322c86-8db6-4592-bb20-fa61dbaf3a28"] // Friends of Hue Switch idV1:/sensors/33

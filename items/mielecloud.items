@@ -1,4 +1,4 @@
-Group gWEG375 "Miele WEG375" <washingmachine> (gKelder) ["Equipment"]
+Group gWEG375 "Miele WEG375" <washingmachine> (gKelder) ["WashingMachine"]
 Switch             WEG375_CanBeStarted      "Can Be Started"                                  (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:remote_control_can_be_started" }
 Switch             WEG375_CanBeStopped      "Can Be Stopped"                                  (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:remote_control_can_be_stopped" }
 Switch             WEG375_CanBeSwitchedOn   "Can Be Switched On"                              (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:remote_control_can_be_switched_on" }

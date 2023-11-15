@@ -1,6 +1,7 @@
 Group gThuis "Thuis" <house> ["House"]
     Group gBeneden "Beneden" <groundfloor> (gThuis) ["GroundFloor"]
         Group gKamer "Kamer" <sofa> (gBeneden) ["LivingRoom"]
+            Group gFernseher "Fernseher" <screen> (gKamer) ["Television"]
         Group gKeuken "Keuken" <kitchen> (gBeneden) ["Kitchen"]
         Group gTerras "Terras" <terrace> (gBeneden) ["Terrace"]
     Group gBoven "Boven" <firstfloor> (gThuis) ["FirstFloor"]

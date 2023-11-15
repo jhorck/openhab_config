@@ -1,0 +1,14 @@
+Group gGastherme "Gastherme" <heating> (gZolder) ["HVAC"]
+Switch             Gastherme_Flamme                  "Flamme"                                     <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_flamme" }
+Switch             Gastherme_Pumpe                   "Pumpe"                                      <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_pumpe" }
+Switch             Gastherme_Speicherladung          "Speicherladung"                             <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_speicherladung" }
+Switch             Gastherme_Winterbetrieb           "Winterbetrieb"                              <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_winterbetrieb" }
+Switch             Gastherme_Heizbetrieb             "Heizbetrieb"                                <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_heizbetrieb" }
+Number             Gastherme_Stoerungsmeldung        "Störungsmeldung [%d]"                                (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_stoerungsmeldung" }
+Number:Temperature Gastherme_Aussentemperatur        "Aussentemperatur [%.1f %unit%]"        <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_aussentemperatur" }
+Number:Temperature Gastherme_Speichertemperatur_ist  "Speichertemperatur ist [%.1f %unit%]"  <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_speichertemperatur_ist" }
+Number:Temperature Gastherme_Speichertemperatur_soll "Speichertemperatur soll [%.1f %unit%]" <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_speichertemperatur_soll" }
+Number:Temperature Gastherme_Speichertemperatur_max  "Speichertemperatur max [%.1f %unit%]"  <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_speichertemperatur_max" }
+Number:Temperature Gastherme_Vorlauftemperatur_ist   "Vorlauftemperatur ist [%.1f %unit%]"   <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_vorlauftemperatur_ist" }
+Number:Temperature Gastherme_Vorlauftemperatur_soll  "Vorlauftemperatur soll [%.1f %unit%]"  <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_vorlauftemperatur_soll" }
+Number:Temperature Gastherme_Vorlauftemperatur_max   "Vorlauftemperatur max [%.1f %unit%]"   <temperature> (gGastherme) ["Measurement", "Temperature"] { channel="mqtt:topic:gastherme:gastherme:gastherme_vorlauftemperatur_max" }

@@ -1,0 +1,415 @@
+{
+  "Gastherme": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "Gastherme",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Nov 14, 2023, 11:50:15 AM",
+      "component": "oh-chart-page",
+      "config": {
+        "label": "Gastherme",
+        "period": "D"
+      },
+      "slots": {
+        "dataZoom": [
+          {
+            "component": "oh-chart-datazoom",
+            "config": {
+              "type": "inside"
+            }
+          }
+        ],
+        "grid": [
+          {
+            "component": "oh-chart-grid",
+            "config": {
+              "includeLabels": true
+            }
+          }
+        ],
+        "legend": [
+          {
+            "component": "oh-chart-legend",
+            "config": {
+              "bottom": 3.0,
+              "type": "scroll"
+            }
+          }
+        ],
+        "series": [
+          {
+            "component": "oh-time-series",
+            "config": {
+              "areaStyle": {},
+              "gridIndex": 0.0,
+              "name": "Flamme",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            },
+            "slots": {
+              "markArea": [
+                {
+                  "component": "oh-mark-area",
+                  "config": {
+                    "item": "Gastherme_Flamme",
+                    "name": "Gastherme_Flamme",
+                    "silent": true
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Aussentemperatur",
+              "name": "Außentemperatur",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Vorlauftemperatur_ist",
+              "name": "Vorlauftemperatur ist",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Speichertemperatur_ist",
+              "name": "Speichertemperatur ist",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          }
+        ],
+        "tooltip": [
+          {
+            "component": "oh-chart-tooltip",
+            "config": {
+              "confine": true,
+              "smartFormatter": true
+            }
+          }
+        ],
+        "xAxis": [
+          {
+            "component": "oh-time-axis",
+            "config": {
+              "gridIndex": 0.0
+            }
+          }
+        ],
+        "yAxis": [
+          {
+            "component": "oh-value-axis",
+            "config": {
+              "gridIndex": 0.0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Gastherme_Speichertemperatur": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "Gastherme_Speichertemperatur",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Nov 14, 2023, 11:53:55 AM",
+      "component": "oh-chart-page",
+      "config": {
+        "label": "Gastherme Speichertemperatur",
+        "period": "D",
+        "sidebar": true
+      },
+      "slots": {
+        "dataZoom": [
+          {
+            "component": "oh-chart-datazoom",
+            "config": {
+              "type": "inside"
+            }
+          }
+        ],
+        "grid": [
+          {
+            "component": "oh-chart-grid",
+            "config": {
+              "includeLabels": true
+            }
+          }
+        ],
+        "legend": [
+          {
+            "component": "oh-chart-legend",
+            "config": {
+              "bottom": 3.0,
+              "type": "scroll"
+            }
+          }
+        ],
+        "series": [
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Speichertemperatur_ist",
+              "name": "Speichertemperatur ist",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Speichertemperatur_soll",
+              "name": "Speichertemperatur soll",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Speichertemperatur_max",
+              "name": "Speichertemperatur max",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "areaStyle": {},
+              "gridIndex": 0.0,
+              "name": "Speicherladung",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            },
+            "slots": {
+              "markArea": [
+                {
+                  "component": "oh-mark-area",
+                  "config": {
+                    "item": "Gastherme_Speicherladung",
+                    "name": "Gastherme_Speicherladung",
+                    "silent": true
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "tooltip": [
+          {
+            "component": "oh-chart-tooltip",
+            "config": {
+              "confine": true,
+              "smartFormatter": true
+            }
+          }
+        ],
+        "xAxis": [
+          {
+            "component": "oh-time-axis",
+            "config": {
+              "gridIndex": 0.0
+            }
+          }
+        ],
+        "yAxis": [
+          {
+            "component": "oh-value-axis",
+            "config": {
+              "gridIndex": 0.0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Gastherme_Vorlauftemperatur": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "Gastherme_Vorlauftemperatur",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Nov 14, 2023, 4:53:29 PM",
+      "component": "oh-chart-page",
+      "config": {
+        "label": "Gastherme Vorlauftemperatur",
+        "period": "D",
+        "sidebar": true
+      },
+      "slots": {
+        "dataZoom": [
+          {
+            "component": "oh-chart-datazoom",
+            "config": {
+              "type": "inside"
+            }
+          }
+        ],
+        "grid": [
+          {
+            "component": "oh-chart-grid",
+            "config": {
+              "includeLabels": true
+            }
+          }
+        ],
+        "legend": [
+          {
+            "component": "oh-chart-legend",
+            "config": {
+              "bottom": 3.0,
+              "type": "scroll"
+            }
+          }
+        ],
+        "series": [
+          {
+            "component": "oh-time-series",
+            "config": {
+              "areaStyle": {},
+              "gridIndex": 0.0,
+              "name": "Flamme",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            },
+            "slots": {
+              "markArea": [
+                {
+                  "component": "oh-mark-area",
+                  "config": {
+                    "item": "Gastherme_Flamme",
+                    "name": "Gastherme_Flamme",
+                    "silent": true
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Aussentemperatur",
+              "name": "Außentemperatur",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Vorlauftemperatur_ist",
+              "name": "Vorlauftemperatur ist",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Vorlauftemperatur_soll",
+              "name": "Vorlauftemperatur soll",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          },
+          {
+            "component": "oh-time-series",
+            "config": {
+              "gridIndex": 0.0,
+              "item": "Gastherme_Vorlauftemperatur_max",
+              "name": "Vorlauftemperatur max",
+              "type": "line",
+              "xAxisIndex": 0.0,
+              "yAxisIndex": 0.0
+            }
+          }
+        ],
+        "tooltip": [
+          {
+            "component": "oh-chart-tooltip",
+            "config": {
+              "confine": true,
+              "smartFormatter": true
+            }
+          }
+        ],
+        "xAxis": [
+          {
+            "component": "oh-time-axis",
+            "config": {
+              "gridIndex": 0.0
+            }
+          }
+        ],
+        "yAxis": [
+          {
+            "component": "oh-value-axis",
+            "config": {
+              "gridIndex": 0.0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "overview": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "overview",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Oct 20, 2023, 9:16:25 PM",
+      "component": "oh-layout-page",
+      "config": {
+        "label": "Overview"
+      },
+      "slots": {
+        "default": []
+      }
+    }
+  }
+}

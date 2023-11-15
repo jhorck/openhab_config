@@ -1,7 +1,7 @@
 Group gKodi "Kodi" <mediacontrol> (gKamer) ["Equipment"]
-Switch htpc_mute                  "Mute"                      <soundvolume_mute> (gKodi) ["Switch", "SoundVolume"]  { channel="kodi:kodi:htpc:mute" }
-Dimmer htpc_volume                "Volume [%d]"               <soundvolume>      (gKodi) ["Control", "SoundVolume"] { channel="kodi:kodi:htpc:volume" }
-Player htpc_control               "Media Control"             <mediacontrol>     (gKodi) ["Control"]                { channel="kodi:kodi:htpc:control" }
+Switch htpc_mute                  "Mute"                <soundvolume_mute>       (gKodi) ["Switch", "SoundVolume"]  { channel="kodi:kodi:htpc:mute" }
+Dimmer htpc_volume                "Volume [%d]"         <soundvolume> (gKodi,gFernseher) ["Control", "SoundVolume"] { channel="kodi:kodi:htpc:volume" }
+Player htpc_control               "Media Control"       <mediacontrol>           (gKodi) ["Control"]                { channel="kodi:kodi:htpc:control" }
 Switch htpc_stop                  "Stop"                                         (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:stop" }
 String htpc_title                 "Title [%s]"                                   (gKodi) ["Status"]                 { channel="kodi:kodi:htpc:title" }
 String htpc_showtitle             "Show title [%s]"                              (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:showtitle" }
