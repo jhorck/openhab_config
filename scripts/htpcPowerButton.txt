@@ -1,0 +1,24 @@
+// create password:
+passwd openhab
+
+// give it a shell:
+chsh -s /bin/bash openhab
+
+// change to user openhab:
+su openhab
+
+// create a rsa key (w/o passphrase):
+ssh-keygen -t rsa
+
+// copy rsa key to htpc:
+ssh-copy-id -i /var/lib/openhab/.ssh/id_rsa openhab@192.168.188.7
+
+
+
+// config sudo command w/o password on htpc:
+sudo vi /etc/sudoers.d/openhab
+openhab ALL = NOPASSWD: /etc/acpi/powerbtn.sh
+
+// optionally allow login only from specific hosts:
+sudo vi /etc/ssh/sshd_config
+DenyUsers openhab@"!192.168.188.6,*"

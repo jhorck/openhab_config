@@ -1,0 +1,42 @@
+rule "Kodi online/offline"
+when
+    Thing "kodi:kodi:htpc" changed
+then
+    if(newThingStatus == "ONLINE") {
+        logInfo("kodi.rules", "Kodi changed to ONLINE")
+        htpc_power.postUpdate(ON)
+    } else if(newThingStatus == "OFFLINE") {
+        logInfo("kodi.rules", "Kodi changed to OFFLINE")
+        htpc_power.postUpdate(OFF)
+    } else {
+        logWarn("kodi.rules", "Unknown thing status: " + newThingStatus)
+    }
+end
+
+
+rule "Start/stop Kodi"
+when
+    Item htpc_power received command
+then
+    logInfo("kodi.rules", "Kodi received command " + receivedCommand)
+    var result = executeCommandLine(Duration.ofSeconds(3),"/bin/bash", "/etc/openhab/scripts/htpcPowerButton.sh", receivedCommand.toString)
+    logInfo("kodi.rules", "Result = " + result)
+end
+
+
+rule "Fernseher an/aus"
+when
+    Item LG_TV1_Power received command
+then
+    if(receivedCommand == "ON") {
+        logInfo("kodi.rules", "TV received command ON")
+        Marantz_Main_Power.sendCommand(ON)
+        htpc_power.sendCommand(ON)
+    } else if(receivedCommand == "OFF") {
+        logInfo("kodi.rules", "TV received command OFF")
+        Marantz_Main_Power.sendCommand(OFF)
+        htpc_power.sendCommand(OFF)
+    } else {
+        logWarn("kodi.rules", "Unknown command received: " + receivedCommand)
+    }
+end
