@@ -1,0 +1,26 @@
+rule "Solar day"
+when
+    Channel "astro:sun:solar:rise#event" triggered START
+then
+    logInfo("victron.rules", "Sun rise triggered")
+    GX_MaxDischargePower.sendCommand(600)
+end
+
+
+rule "Solar night"
+when
+    Channel "astro:sun:solar:set#event" triggered START
+then
+    logInfo("victron.rules", "Sun set triggered")
+    GX_MaxDischargePower.sendCommand(250)
+end
+
+
+rule "Victron MQTT keep alive"
+when
+    Time cron "0/30 * * * * ? *"
+then
+    val actions = getActions("mqtt", "mqtt:broker:victron")
+    actions.publishMQTT("R/c8df84d3a80c/system/0/Serial", "")
+    logDebug("victron.rules", "MQTT Keep Alive Timer fired!!")
+end

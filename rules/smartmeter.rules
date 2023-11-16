@@ -1,0 +1,50 @@
+rule "Update gasmeter"
+when
+    Item Smartmeter_Gas_Pulse_Count changed
+then
+    logInfo("smartmeter.rules", "Smartmeter_Gas_Pulse_Count changed")
+
+    //val Number previousCount = Smartmeter_Gas_Pulse_Count.previousState(false, "influxdb").state as Number;
+    val Number previousCount = Smartmeter_Gas_Pulse_Count.previousState().state as Number;
+    val Number currentCount  = Smartmeter_Gas_Pulse_Count.state as Number;
+    val Number countDiff = currentCount - previousCount;
+    var Number totalCount;
+    var Number heatingCount = 0.0;
+    var Number tapwaterCount = 0.0;
+
+//    logInfo("smartmeter.rules", "Got new count: " + currentCount + ", previous count: " + previousCount + ", diff = " + countDiff);
+
+    if(Smartmeter_Gasmeter.state != NULL) {
+        totalCount = Smartmeter_Gasmeter.state as Number;
+    } else {
+        totalCount = 0.0;
+        logInfo("smartmeter.rules", "Total count is NULL, reset it to 0.0");
+    }
+
+    if(countDiff > 0.0) {
+        // normal counting, add difference to total
+        totalCount = totalCount + countDiff;
+        Smartmeter_Gasmeter.sendCommand(totalCount);
+//        logInfo("smartmeter.rules", "Set total count to: " + totalCount);
+        if(Gastherme_Speicherladung.state != NULL) {
+            if(Gastherme_Speicherladung.state == ON) {
+                if(Smartmeter_Gasmeter_Tapwater.state != NULL) {
+                    tapwaterCount = Smartmeter_Gasmeter_Tapwater.state as Number;
+                }
+                tapwaterCount = tapwaterCount + countDiff;
+                Smartmeter_Gasmeter_Tapwater.sendCommand(tapwaterCount);      
+            } else {
+                if(Smartmeter_Gasmeter_Heating.state != NULL) {
+                    heatingCount = Smartmeter_Gasmeter_Heating.state as Number;
+                }
+                heatingCount = heatingCount + countDiff;
+                Smartmeter_Gasmeter_Heating.sendCommand(heatingCount);
+            }
+        }
+    } else if (countDiff < 0.0) {
+        // restart or rollover of counter
+        totalCount = totalCount + currentCount;
+        Smartmeter_Gasmeter.sendCommand(totalCount);
+        logInfo("smartmeter.rules", "Set total count to: " + totalCount + " (restart)");
+    }
+end

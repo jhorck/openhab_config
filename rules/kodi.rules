@@ -10,6 +10,7 @@ then
         htpc_power.postUpdate(OFF)
     } else {
         logWarn("kodi.rules", "Unknown thing status: " + newThingStatus)
+        htpc_power.postUpdate(OFF)
     }
 end
 
