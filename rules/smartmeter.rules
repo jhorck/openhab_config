@@ -2,8 +2,6 @@ rule "Update gasmeter"
 when
     Item Smartmeter_Gas_Pulse_Count changed
 then
-    logInfo("smartmeter.rules", "Smartmeter_Gas_Pulse_Count changed")
-
     //val Number previousCount = Smartmeter_Gas_Pulse_Count.previousState(false, "influxdb").state as Number;
     val Number previousCount = Smartmeter_Gas_Pulse_Count.previousState().state as Number;
     val Number currentCount  = Smartmeter_Gas_Pulse_Count.state as Number;

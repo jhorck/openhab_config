@@ -1,4 +1,4 @@
-Group gGastherme "Gastherme" <heating> (gZolder) ["HVAC"]
+Group gGastherme "Gastherme" <heating> (gZolder) ["HVAC"] { widget="oh-gauge-card" [action="popup", actionModal="page:Gastherme", item="Gastherme_Vorlauftemperatur_ist", min=0, max=90] }
 Switch             Gastherme_Flamme                  "Flamme"                                     <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_flamme" }
 Switch             Gastherme_Pumpe                   "Pumpe"                                      <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_pumpe" }
 Switch             Gastherme_Speicherladung          "Speicherladung"                             <switch> (gGastherme) ["Point"]                      { channel="mqtt:topic:gastherme:gastherme:gastherme_speicherladung" }

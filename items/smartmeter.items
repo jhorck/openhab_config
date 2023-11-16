@@ -1,4 +1,4 @@
-Group gSmartmeter "Smartmeter" <energy> (gKelder) ["Equipment"]
+Group gSmartmeter "Smartmeter" <energy> (gKelder) ["Equipment"] { widget="oh-label-card", item="Smartmeter_Actual" }
 String        Smartmeter_Manufacturer_ID   "Manufacturer ID [%s]"                  (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_manufacturer_id" }
 String        Smartmeter_Device_ID         "Device ID [%s]"                        (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_device_id" }
 Number:Energy Smartmeter_Total_Positive    "Total positive [%.0f %unit%]" <energy> (gSmartmeter) ["Point"]                 { channel="mqtt:topic:smartmeter:smartmeter:smartmeter_total_positive" }

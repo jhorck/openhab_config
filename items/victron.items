@@ -1,21 +1,21 @@
-Group gVenus "Venus GX" <solarplant> (gZolder) ["Equipment"]
+Group gVenus "Venus GX" <solarplant> (gZolder) ["Equipment"] {widget="oh-gauge-card" [item="GX_SolarPower", action="group", actionGroupPopupItem="gVenus", min=0, max=3000, type="semicircle"]}
 Dimmer                   GX_BatterySoC        "Battery SoC [%d %%]"            <batterylevel> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_battery_soc" }
 Number:ElectricPotential GX_BatteryVoltage    "Battery voltage [%.2f %unit%]"                 (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_battery_voltage" }
-Number:Power             GX_SolarPower        "Solar power [%.0f %unit%]"        <solarplant> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_pv" }
+Number:Power             GX_SolarPower        "Solar power [%.0f %unit%]"        <solarplant> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_pv", widget="oh-gauge-card" [min=0, max=3000, type="semicircle"] }
 Group:Number:SUM gConsumption "Consumption [%.0f W]" <energy> (gVenus) ["Equipment"]
 Number:Power             GX_Consumption1      "Consumption 1 [%.0f %unit%]"          <energy> (gConsumption) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_consumption_1" }
 Number:Power             GX_Consumption2      "Consumption 2 [%.0f %unit%]"          <energy> (gConsumption) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_consumption_2" }
 Number:Power             GX_Consumption3      "Consumption 3 [%.0f %unit%]"          <energy> (gConsumption) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_consumption_3" }
-Number:Power             GX_MaxDischargePower "Max discharge power [%.0f %unit%]"             (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_max_discharge_power" }
+Number:Power             GX_MaxDischargePower "Max discharge power [%.0f %unit%]"             (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_max_discharge_power", listWidget="oh-stepper-item" [min=0, max=600, step=50, raised=true] }
 Group:Number:SUM gGrid "Grid [%.0f W]" <energy> (gVenus) ["Equipment"]
 Number:Power             GX_Grid1             "Grid 1 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_1" }
 Number:Power             GX_Grid2             "Grid 2 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_2" }
 Number:Power             GX_Grid3             "Grid 3 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_3" }
 Number:Power             GX_InverterPower     "Inverter power [%.0f %unit%]"         <energy> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_inverter_power" }
-Number:Power             GX_AcPowerSetpoint   "AC power setpoint [%.0f %uni%]"                (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_ac_power_set_point" }
+Number:Power             GX_AcPowerSetpoint   "AC power setpoint [%.0f %uni%]"                (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_ac_power_set_point", listWidget="oh-stepper-item" [min=-100, max=100, step=10, raised=true]  }
 Switch                   GX_AllowToCharge     "Allow to charge"                      <switch> (gVenus) ["Switch"] { channel="mqtt:topic:victron:venus:pv_allow_to_charge" }
 
-Group gSolarSun "Sun" <sun> (gVenus) ["Equipment"]
+Group gSolarSun "Sun" <sun> (gVenus) ["Equipment"] { widget="oh-label-card", item="Solar_Radiation" }
 DateTime         Solar_Sunrise_Start   "Sunrise start time"        <sunrise> (gSolarSun) ["Point"] { channel="astro:sun:solar:rise#start" }
 DateTime         Solar_Sunset_End      "Sunset end time"            <sunset> (gSolarSun) ["Point"] { channel="astro:sun:solar:set#end" }
 Number:Intensity Solar_Radiation       "Total radiation [%.2f %unit%]" <sun> (gSolarSun) ["Point"] { channel="astro:sun:solar:radiation#total" }

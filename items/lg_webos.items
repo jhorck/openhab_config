@@ -1,6 +1,5 @@
-
-Group gLGWebOSTV "LG webOS TV" <screen> (gKamer) ["Screen"]
-Switch LG_TV1_Power        "TV Power"         <television>       (gLGWebOSTV,gFernseher) ["Switch", "Power"]        { autoupdate="false", channel="lgwebos:WebOSTV:tv1:power" }
+Group gLGWebOSTV "LG webOS TV" <screen> (gKamer) ["Screen"] {widget="oh-toggle-card" [item="LG_TV1_Power"]}
+Switch LG_TV1_Power        "TV Power"         <television>       (gLGWebOSTV,gFernseher) ["Switch", "Power"]        { autoupdate="false", channel="lgwebos:WebOSTV:tv1:power", widget="oh-toggle-card" }
 Switch LG_TV1_Mute         "TV Mute"          <soundvolume_mute> (gLGWebOSTV,gFernseher) ["Switch", "SoundVolume"]  { channel="lgwebos:WebOSTV:tv1:mute"}
 Dimmer LG_TV1_Volume       "Volume [%d]"      <soundvolume>      (gLGWebOSTV)            ["Control", "SoundVolume"] { channel="lgwebos:WebOSTV:tv1:volume" }
 Number LG_TV1_VolDummy     "VolumeUpDown"                        (gLGWebOSTV) 
