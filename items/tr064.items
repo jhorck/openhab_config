@@ -63,10 +63,10 @@ Number:DataTransferRate Fritzbox_WAN_UpCurRate       "Current Upstream Rate [%d 
 //Number:DataTransferRate Fritzbox_WAN_DSL_UpMaxRate   "DSL Max Upstream Rate [%d %unit%]"     (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslUpstreamMaxRate" }
 //Number:DataTransferRate Fritzbox_WAN_DSL_DownCurRate "DSL Curr. Downstream Rate [%d %unit%]" (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslDownstreamCurrRate" }
 //Number:DataTransferRate Fritzbox_WAN_DSL_UpCurRate   "DSL Curr. Upstream Rate [%d %unit%]"   (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslUpstreamCurrRate" }
-//Number:Dimensionless    Fritzbox_WAN_DSL_DownNoise   "DSL Downstream Noise Margin [%d]"      (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslDownstreamNoiseMargin" }
-//Number:Dimensionless    Fritzbox_WAN_DSL_UpNoise     "DSL Upstream Noise Margin [%d]"        (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslUpstreamNoiseMargin" }
-//Number:Dimensionless    Fritzbox_WAN_DSL_DownAtt     "DSL Downstream Attenuation [%d]"       (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslDownstreamAttenuation" }
-//Number:Dimensionless    Fritzbox_WAN_DSL_UpAtt       "DSL Upstream Attenuation [%d]"         (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslUpstreamAttenuation" }
+//Number:Dimensionless    Fritzbox_WAN_DSL_DownNoise   "DSL Downstream Noise Margin [%d dB]"   (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslDownstreamNoiseMargin" }
+//Number:Dimensionless    Fritzbox_WAN_DSL_UpNoise     "DSL Upstream Noise Margin [%d dB]"     (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslUpstreamNoiseMargin" }
+//Number:Dimensionless    Fritzbox_WAN_DSL_DownAtt     "DSL Downstream Attenuation [%d dB]"    (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslDownstreamAttenuation" }
+//Number:Dimensionless    Fritzbox_WAN_DSL_UpAtt       "DSL Upstream Attenuation [%d dB]"      (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslUpstreamAttenuation" }
 //Number:Dimensionless    Fritzbox_WAN_DSL_FEC_Errors  "DSL FEC Errors [%d]"                   (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslFECErrors" }
 //Number:Dimensionless    Fritzbox_WAN_DSL_HEC_Errors  "DSL HEC Errors [%d]"                   (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslHECErrors" }
 //Number:Dimensionless    Fritzbox_WAN_DSL_CRC_Errors  "DSL CRC Errors [%d]"                   (gFritzboxWAN) ["Point"] { channel="tr064:subdevice:rootuid:WAN:dslCRCErrors" }

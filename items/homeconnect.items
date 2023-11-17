@@ -12,7 +12,7 @@ Number:Time          Oven_SelectedDurationMin "Selected Duration (Min) [%.0f min
 String               Oven_ProgramActions      "Program Actions [%s]"                           (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:basic_actions_state" }
 Number:Time          Oven_RemainingTime       "Remaining Program Time [%d %unit%]"      <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:remaining_program_time_state" }
 Number:Time          Oven_RemainingTimeMin    "Remaining Program Time (Min) [%.2f min]" <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:remaining_program_time_state" }
-Number:Dimensionless Oven_ProgressState       "Progress State [%d %unit%]"                     (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:program_progress_state" }
+Number:Dimensionless Oven_ProgressState       "Progress State [%d %%]"                         (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:program_progress_state" }
 Number:Temperature   Oven_Temperature         "Cavity Temperature [%d %unit%]"   <temperature> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:oven_current_cavity_temperature" }
 Number:Time          Oven_ElapsedTime         "Elapsed Program Time [%d %unit%]"        <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:elapsed_program_time" }
 Number:Time          Oven_ElapsedTimeMin      "Elapsed Program Time (Min) [%.2f min]"   <time> (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:elapsed_program_time" }
