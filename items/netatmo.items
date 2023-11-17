@@ -1,6 +1,6 @@
 
 // Indoor Module
-Group:Number:Temperature gNetatmoBinnen "Netatmo Binnen [%.1f %unit%]" <temperature> (gKamer) ["Equipment"] { widget="oh-label-card", item="Indoor_Temperature" }
+Group:Number:Temperature gNetatmoBinnen "Netatmo Binnen [%.1f %unit%]" <temperature> (gKamer) ["Equipment"] { widget="oh-label-card" [ item="Indoor_Temperature" ] }
 Number:Temperature   Indoor_Temperature        "Temperature [%.1f %unit%]"                          <temperature>      (gNetatmoBinnen) ["Measurement", "Temperature"] { channel = "netatmo:weather-station:myaccount:inside:temperature#value" }
 //Number:Temperature   Indoor_Min_Temp           "Min Temperature Today [%.1f %unit%]"                <temperature>      (gNetatmoBinnen) ["Measurement", "Temperature"] { channel = "netatmo:weather-station:myaccount:inside:temperature#min-today" }
 //Number:Temperature   Indoor_Max_Temp           "Max Temperature Today [%.1f %unit%]"                <temperature>      (gNetatmoBinnen) ["Measurement", "Temperature"] { channel = "netatmo:weather-station:myaccount:inside:temperature#max-today" }
@@ -19,7 +19,7 @@ DateTime             Indoor_TimeStamp          "Measures Timestamp [%1$td.%1$tm.
 //Location             Indoor_Location           "Location [%s]"                                                         (gNetatmoBinnen) ["Point"]                      { channel = "netatmo:weather-station:myaccount:inside:location#value" }
 
 // Outdoor Module
-Group gNetatmoBuiten "Netatmo Buiten" <temperature> (gTerras) ["Equipment"] { widget="oh-label-card", item="Outdoor_Temperature" }
+Group gNetatmoBuiten "Netatmo Buiten" <temperature> (gTerras) ["Equipment"] { widget="oh-label-card" [ item="Outdoor_Temperature" ] }
 Number:Temperature   Outdoor_Temperature        "Temperature [%.1f %unit%]"                          <temperature>      (gNetatmoBuiten) ["Measurement", "Temperature"] { channel = "netatmo:outdoor:myaccount:inside:outside:temperature#value" }
 //String               Outdoor_TempTrend          "TempTrend [%s]"                                     <line>             (gNetatmoBuiten) ["Point"]                      { channel = "netatmo:outdoor:myaccount:inside:outside:temperature#trend" }
 Number:Dimensionless Outdoor_Humidity           "Humidity [%.0f %%]"                                 <humidity>         (gNetatmoBuiten) ["Measurement", "Humidity"]    { channel = "netatmo:outdoor:myaccount:inside:outside:humidity#value" }
@@ -34,7 +34,7 @@ DateTime             Outdoor_TimeStamp          "Measures Timestamp [%1$td.%1$tm
 //DateTime             Outdoor_LastMessage        "Last Message [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"       <time>             (gNetatmoBuiten) ["Point"]                      { channel = "netatmo:outdoor:myaccount:inside:outside:timestamp#last-seen" }
 
 // Additional Indoor Module
-Group gNetatmoSlaapkamer "Netatmo Slaapkamer" <temperature> (gSlaapkamer) ["Equipment"] { widget="oh-label-card", item="Indoor2_Temperature" }
+Group gNetatmoSlaapkamer "Netatmo Slaapkamer" <temperature> (gSlaapkamer) ["Equipment"] { widget="oh-label-card" [ item="Indoor2_Temperature" ] }
 Number:Temperature   Indoor2_Temperature        "Temperature [%.1f %unit%]"                          <temperature>      (gNetatmoSlaapkamer) ["Measurement", "Temperature"] { channel = "netatmo:indoor:myaccount:inside:indoor2:temperature#value" }
 //String               Indoor2_TempTrend          "TempTrend [%s]"                                     <line>             (gNetatmoSlaapkamer) ["Point"]                      { channel = "netatmo:indoor:myaccount:inside:indoor2:temperature#trend" }
 Number:Dimensionless Indoor2_Humidity           "Humidity [%.0f %%]"                                 <humidity>         (gNetatmoSlaapkamer) ["Measurement", "Humidity"]    { channel = "netatmo:indoor:myaccount:inside:indoor2:humidity#value" }
