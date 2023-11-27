@@ -1,7 +1,7 @@
 Group gKodi "Kodi" <mediacontrol> (gKamer) ["Equipment"]
 Switch htpc_power                 "Power"               <switch>                 (gKodi) ["Switch", "Power"]
 Switch htpc_mute                  "Mute"                <soundvolume_mute>       (gKodi) ["Switch", "SoundVolume"]  { channel="kodi:kodi:htpc:mute" }
-Dimmer htpc_volume                "Volume [%d]"         <soundvolume> (gKodi,gFernseher) ["Control", "SoundVolume"] { channel="kodi:kodi:htpc:volume" }
+Dimmer htpc_volume                "Volume [%d]"         <soundvolume> (gKodi,gFernseher) ["Control", "SoundVolume"] { channel="kodi:kodi:htpc:volume", alexa="Television.VolumeLevel" }
 Player htpc_control               "Media Control"       <mediacontrol>           (gKodi) ["Control"]                { channel="kodi:kodi:htpc:control" }
 Switch htpc_stop                  "Stop"                                         (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:stop" }
 String htpc_title                 "Title [%s]"                                   (gKodi) ["Status"]                 { channel="kodi:kodi:htpc:title" }
@@ -13,7 +13,8 @@ String htpc_playfavorite          "Play favorite"                               
 String htpc_audiolanguage         "Audio Language [%s]"                          (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:audio-language"}
 Switch htpc_subtitle_enabled      "Subtitle Enabled"                             (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:subtitle-enabled"}
 Switch htpc_subtitle_language     "Subtitle Language [%s]"                       (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:subtitle-language"}
-String htpc_pvropentv             "Play PVR TV channel [%s]"                     (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:pvr-open-tv" }
+String htpc_pvropentv             "Play PVR TV channel [%s]"          (gKodi,gFernseher) ["Point"]                  { channel="kodi:kodi:htpc:pvr-open-tv", 
+                                                                                                                        alexa="Television.Channel" [ channelMappings="NPO1 HD=NPO1 HD,NPO2 HD=NPO2 HD,NPO3 HD=NPO3 HD,RTL4 HD=RTL4 HD,RTL5 HD=RTL5 HD,SBS6 HD=SBS6 HD,RTL7 HD=RTL7 HD,Veronica/DisneyXD HD=Veronica/DisneyXD HD,NET5 HD=NET5 HD,RTL8 HD=RTL8 HD,RTL Z=RTL Z" ] }
 String htpc_pvropenradio          "Play PVR Radio channel [%s]"                  (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:pvr-open-radio" }
 String htpc_pvrchannel            "PVR channel [%s]"                             (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:pvr-channel" }
 String htpc_notification          "Show Notification"                            (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:shownotification" }
@@ -21,7 +22,8 @@ String htpc_error_notification    "Error Notification"                          
 String htpc_weather_notification  "Weather Notification"                         (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:weather-notification" }
 String htpc_input                 "Send a key"                                   (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:input" }
 String htpc_inputtext             "Send text as input"                           (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:inputtext" }
-String htpc_inputaction           "Execute an action"                            (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:inputaction" }
+String htpc_inputaction           "Execute an action"                 (gKodi,gFernseher) ["Point"]                  { channel="kodi:kodi:htpc:inputaction",
+                                                                                                                        alexa="Television.ChannelStep" [ CHANNEL_UP="channelup", CHANNEL_DOWN="channeldown" ] }
 String htpc_inputbutton           "Send a button press event"                    (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:inputbuttonevent" }
 String htpc_systemcommand         "Systemcommand"                                (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:systemcommand" }
 String htpc_mediatype             "Mediatype [%s]"                               (gKodi) ["Point"]                  { channel="kodi:kodi:htpc:mediatype" }

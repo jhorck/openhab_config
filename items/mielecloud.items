@@ -1,4 +1,10 @@
-Group gWEG375 "Miele WEG375" <washingmachine> (gKelder) ["WashingMachine"] { widget="widget:washing_machine_v4" [ header="=items.WEG375_ActiveProgram.state != \"UNDEF\" ? items.WEG375_ActiveProgram.state : \"\"", runtime="=Math.floor(items.WEG375_RemainingTime.state/60)", state="=items.WEG375_RawOperationState.state == 1 ? \"OFF\" : items.WEG375_RawOperationState.state == 5 ? \"RUNNING\" : \"FINISHED\"", footer="=items.WEG375_ActiveProgram.state != \"UNDEF\" ? items.WEG375_ActiveProgram.state + \" \" + items.WEG375_TargetTemperature.state : \"\"" ] }
+Group gWEG375 "Miele WEG375" <washingmachine> (gKelder) ["WashingMachine"] {
+    widget="widget:washing_machine_v4" [ header="=items.WEG375_ActiveProgram.state != \"UNDEF\" ? items.WEG375_ActiveProgram.state : \"\"", 
+                                         runtime="=Math.floor(items.WEG375_RemainingTime.state/60)", 
+                                         state="=items.WEG375_RawOperationState.state == 1 ? \"OFF\" : items.WEG375_RawOperationState.state == 5 ? \"RUNNING\" : \"FINISHED\"", 
+                                         footer="=items.WEG375_ActiveProgram.state != \"UNDEF\" ? items.WEG375_ActiveProgram.state + \" \" + items.WEG375_TargetTemperature.state : \"\"" ],
+    alexa="Washer" [ name="Waschmaschine" ]
+}
 Switch             WEG375_CanBeStarted      "Can Be Started"                                  (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:remote_control_can_be_started" }
 Switch             WEG375_CanBeStopped      "Can Be Stopped"                                  (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:remote_control_can_be_stopped" }
 Switch             WEG375_CanBeSwitchedOn   "Can Be Switched On"                              (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:remote_control_can_be_switched_on" }
@@ -12,10 +18,10 @@ Number             WEG375_RawProgramPhase   "Raw Program Phase [%d]"            
 String             WEG375_OperationState    "Operation State [%s]"                            (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:operation_state" }
 Number             WEG375_RawOperationState "Raw Operation State [%d]"                        (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:operation_state_raw" }
 String             WEG375_StartStop         "Start Stop [%s]"                                 (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:program_start_stop" }
-Switch             WEG375_Finished          "Finished"                                <alarm> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:finish_state" }
-String             WEG375_Power             "Power"                                           (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:power_state_on_off" }
+Switch             WEG375_Finished          "Finished"                                <alarm> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:finish_state", alexa="Washer.ToggleState" [ capabilityNames="Fertig", stateMappings="Closed=OFF,Open=ON" ] }
+String             WEG375_Power             "Power"                                           (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:power_state_on_off", alexa="Washer.PowerState" [ OFF="off", ON="on" ] }
 Number             WEG375_DelayedStartTimer "Delayed Start Timer [%d %unit%]"                 (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:delayed_start_time" }
-Number             WEG375_RemainingTime     "Program Remaining Time [%d %unit%]"              (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:program_remaining_time" }
+Number             WEG375_RemainingTime     "Program Remaining Time [%d %unit%]"              (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:program_remaining_time", alexa="Washer.RangeValue" [ capabilityNames="Laufzeit" ] }
 Number             WEG375_ElapsedTime       "Program Elapsed Time [%d %unit%]"                (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:program_elapsed_time" }
 Number             WEG375_Progress          "Program Progress [%d]"                           (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:program_progress" }
 Switch             WEG375_ErrorState        "Error State"                             <alarm> (gWEG375) ["Point"] { channel="mielecloud:washing_machine:openhab2:000150605784:error_state" }

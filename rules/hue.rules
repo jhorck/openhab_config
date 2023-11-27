@@ -1,0 +1,15 @@
+rule "Keuken aan scene"
+when
+    Item LichtKeuken_Power received command ON
+then
+    LichtKeuken_Scene.sendCommand("Keuken aan")
+end
+
+
+rule "Kamer aan scene"
+when
+    Item LichtKamer_Power received command ON
+then
+    LichtKamer_Scene.sendCommand("Kamer aan")
+end
+

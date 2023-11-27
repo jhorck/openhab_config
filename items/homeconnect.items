@@ -1,5 +1,18 @@
-Group gSiemensOven "Siemens Oven" (gKeuken) ["Oven"] { widget="widget:oven_v1" [ curr_temp="Oven_Temperature", door="Oven_DoorState", elapsed_runtime="Oven_ElapsedTimeMin", operation_mode="Oven_OperationState", active="Oven_Power", set_duration="Oven_SelectedDurationMin", remote_access="Oven_RemoteControl", set_temp="Oven_SetpointTemperature", remaining_runtime="Oven_RemainingTimeMin", active_program="Oven_ActiveProgram", progress="Oven_ProgressState" ] }
-Switch               Oven_Power               "Power"                                 <switch> (gSiemensOven) ["Switch", "Power"] { channel="homeconnect:oven:api_bridge_at_home:oven1:power_state" }
+Group gSiemensOven "Siemens Oven" (gKeuken) ["Oven"] { 
+    widget="widget:oven_v1" [ curr_temp="Oven_Temperature", 
+                              door="Oven_DoorState", 
+                              elapsed_runtime="Oven_ElapsedTimeMin", 
+                              operation_mode="Oven_OperationState", 
+                              active="Oven_Power", 
+                              set_duration="Oven_SelectedDurationMin", 
+                              remote_access="Oven_RemoteControl", 
+                              set_temp="Oven_SetpointTemperature", 
+                              remaining_runtime="Oven_RemainingTimeMin", 
+                              active_program="Oven_ActiveProgram", 
+                              progress="Oven_ProgressState" ],
+    alexa="Oven" [ name="Ofen" ]
+}
+Switch               Oven_Power               "Power"                                 <switch> (gSiemensOven) ["Switch", "Power"] { channel="homeconnect:oven:api_bridge_at_home:oven1:power_state", alexa="Oven.PowerState" }
 Contact              Oven_DoorState           "Door State"                                     (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:door_state" }
 String               Oven_OperationState      "Operation State"                                (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:operation_state" }
 Switch               Oven_RemoteStartAllowed  "Remote Start Allowed"                           (gSiemensOven) ["Point"] { channel="homeconnect:oven:api_bridge_at_home:oven1:remote_start_allowance_state" }

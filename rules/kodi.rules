@@ -29,11 +29,11 @@ rule "Fernseher an/aus"
 when
     Item LG_TV1_Power received command
 then
-    if(receivedCommand == "ON") {
+    if(receivedCommand == ON) {
         logInfo("kodi.rules", "TV received command ON")
         Marantz_Main_Power.sendCommand(ON)
         htpc_power.sendCommand(ON)
-    } else if(receivedCommand == "OFF") {
+    } else if(receivedCommand == OFF) {
         logInfo("kodi.rules", "TV received command OFF")
         Marantz_Main_Power.sendCommand(OFF)
         htpc_power.sendCommand(OFF)
