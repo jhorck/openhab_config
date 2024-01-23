@@ -6,7 +6,7 @@ Group:Number:SUM gConsumption "Consumption [%.0f W]" <energy> (gVenus) ["Equipme
 Number:Power             GX_Consumption1      "Consumption 1 [%.0f %unit%]"          <energy> (gConsumption) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_consumption_1" }
 Number:Power             GX_Consumption2      "Consumption 2 [%.0f %unit%]"          <energy> (gConsumption) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_consumption_2" }
 Number:Power             GX_Consumption3      "Consumption 3 [%.0f %unit%]"          <energy> (gConsumption) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_consumption_3" }
-Number:Power             GX_MaxDischargePower "Max discharge power [%.0f %unit%]"             (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_max_discharge_power", listWidget="oh-stepper-item" [min=0, max=600, step=50, raised=true] }
+Number:Power             GX_MaxDischargePower "Max discharge power [%.0f %unit%]"             (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_max_discharge_power", listWidget="oh-stepper-item" [min=0, max=800, step=50, raised=true] }
 Group:Number:SUM gGrid "Grid [%.0f W]" <energy> (gVenus) ["Equipment"]
 Number:Power             GX_Grid1             "Grid 1 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_1" }
 Number:Power             GX_Grid2             "Grid 2 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_2" }

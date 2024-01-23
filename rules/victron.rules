@@ -3,7 +3,7 @@ when
     Channel "astro:sun:solar:rise#event" triggered START
 then
     logInfo("victron.rules", "Sun rise triggered")
-    GX_MaxDischargePower.sendCommand(600)
+    GX_MaxDischargePower.sendCommand(800)
 end
 
 

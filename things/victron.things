@@ -9,7 +9,7 @@ Thing mqtt:topic:victron:venus "Venus GX" (mqtt:broker:victron) {
     Type number : pv_power_consumption_2 "Consumption 2"       [ stateTopic="N/c8df84d3a80c/system/0/Ac/Consumption/L2/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_consumption_3 "Consumption 3"       [ stateTopic="N/c8df84d3a80c/system/0/Ac/Consumption/L3/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_max_discharge_power "Max discharge power" [ stateTopic="N/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", transformationPattern="JSONPATH:$.value", postCommand="true",
-                                                                 commandTopic="W/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", formatBeforePublish="{\"value\":%s}", min=0, max=600, step=50, unit="W" ]
+                                                                 commandTopic="W/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", formatBeforePublish="{\"value\":%s}", min=0, max=800, step=50, unit="W" ]
     Type number : pv_power_grid_1        "Grid 1"              [ stateTopic="N/c8df84d3a80c/system/0/Ac/Grid/L1/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_grid_2        "Grid 2"              [ stateTopic="N/c8df84d3a80c/system/0/Ac/Grid/L2/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_grid_3        "Grid 3"              [ stateTopic="N/c8df84d3a80c/system/0/Ac/Grid/L3/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
