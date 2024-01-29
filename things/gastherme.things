@@ -1,4 +1,4 @@
-Bridge mqtt:broker:gastherme "MQTT Broker Gastherme" [ host="192.168.188.34", secure=false ]
+Bridge mqtt:broker:gastherme "MQTT Broker Gastherme" [ host="192.168.188.100", secure=false ]
 
 Thing mqtt:topic:gastherme:gastherme "Gastherme" (mqtt:broker:gastherme) {
     Channels:
