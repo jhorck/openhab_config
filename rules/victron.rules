@@ -24,3 +24,11 @@ then
     actions.publishMQTT("R/c8df84d3a80c/system/0/Serial", "")
     logDebug("victron.rules", "MQTT Keep Alive Timer fired!!")
 end
+
+
+rule "Victron alarm: no grid meter"
+when
+    Item GX_NoGridMeter changed from OFF to ON
+then
+    sendNotification("email@server.com", "Alarm: victron lost connection to grid meter")
+end
