@@ -1,5 +1,6 @@
 Group gVenus "Venus GX" <solarplant> (gZolder) ["Equipment"] {widget="oh-gauge-card" [item="GX_SolarPower", action="group", actionGroupPopupItem="gVenus", min=0, max=3000, type="semicircle"]}
 Dimmer                   GX_BatterySoC        "Battery SoC [%d %%]"            <batterylevel> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_battery_soc" }
+Number                   GX_BatterySoCLimit   "Battery SoC limit [%d %%]"                     (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_battery_soc_limit" }
 Number:ElectricPotential GX_BatteryVoltage    "Battery voltage [%.2f %unit%]"                 (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_battery_voltage" }
 Number:Power             GX_SolarPower        "Solar power [%.0f %unit%]"        <solarplant> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_pv", widget="oh-gauge-card" [min=0, max=3000, type="semicircle"] }
 Group:Number:SUM gConsumption "Consumption [%.0f W]" <energy> (gVenus) ["Equipment"]

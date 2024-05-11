@@ -3,6 +3,7 @@ Bridge mqtt:broker:victron "MQTT Broker Victron" [ host="192.168.188.47", secure
 Thing mqtt:topic:victron:venus "Venus GX" (mqtt:broker:victron) {
     Channels:
     Type dimmer : pv_battery_soc         "Battery SoC"          [ stateTopic="N/c8df84d3a80c/system/0/Dc/Battery/Soc", transformationPattern="JSONPATH:$.value" ]
+    Type number : pv_battery_soc_limit   "Battery SoC limit"    [ stateTopic="N/c8df84d3a80c/system/0/Control/ActiveSocLimit", transformationPattern="JSONPATH:$.value" ]
     Type number : pv_battery_voltage     "Battery voltage"      [ stateTopic="N/c8df84d3a80c/system/0/Dc/Battery/Voltage", transformationPattern="JSONPATH:$.value", unit="V" ]
     Type number : pv_power_pv            "Solar power"          [ stateTopic="N/c8df84d3a80c/system/0/Dc/Pv/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_consumption_1 "Consumption 1"        [ stateTopic="N/c8df84d3a80c/system/0/Ac/Consumption/L1/Power", transformationPattern="JSONPATH:$.value", unit="W" ]

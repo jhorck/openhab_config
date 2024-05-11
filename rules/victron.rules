@@ -1,19 +1,26 @@
-rule "Solar day"
-when
-    Channel "astro:sun:solar:rise#event" triggered START
-then
-    logInfo("victron.rules", "Sun rise triggered")
-    GX_MaxDischargePower.sendCommand(800)
-end
+import java.time.temporal.ChronoUnit
+
+val maxDischarge = 800.0
+val minDischarge = 150.0
+val gridSetPoint = 30.0
+val capacity = 5000.0
+
+//rule "Solar day"
+//when
+//    Channel "astro:sun:solar:rise#event" triggered START
+//then
+//    logInfo("victron.rules", "Skipped - Sunrise triggered")
+//    GX_MaxDischargePower.sendCommand(800)
+//end
 
 
-rule "Solar night"
-when
-    Channel "astro:sun:solar:set#event" triggered START
-then
-    logInfo("victron.rules", "Sun set triggered")
-    GX_MaxDischargePower.sendCommand(250)
-end
+//rule "Solar night"
+//when
+//    Channel "astro:sun:solar:set#event" triggered START
+//then
+//    logInfo("victron.rules", "Skipped - Sunset triggered")
+//    GX_MaxDischargePower.sendCommand(250)
+//end
 
 
 rule "Victron MQTT keep alive"
@@ -31,4 +38,52 @@ when
     Item GX_NoGridMeter changed from OFF to ON
 then
     sendNotification("email@server.com", "Alarm: victron lost connection to grid meter")
+end
+
+
+rule "Victron set max solar discharge power"
+when
+    Time cron "0 0/5 * * * ? *"
+then
+    val sunrise = (Solar_Sunrise_Start.state as DateTimeType).getZonedDateTime()
+    val sunset  = (Solar_Sunset_End.state as DateTimeType).getZonedDateTime()
+    val availableSoC = (GX_BatterySoC.state as Number - GX_BatterySoCLimit.state as Number) / 100
+    val availableCapacity = capacity * availableSoC
+    var duration = ChronoUnit.MINUTES.between(now,sunrise) / 60.0
+    var power = 0.0
+
+    if(duration < 0.0) {
+        duration = duration + 24.0  // Evening, so sunrise was from today
+        duration = duration / 1.25  // Start the evening with slightly more power
+    }
+
+    power = availableCapacity / duration
+    if(power > maxDischarge) { power = maxDischarge }
+    if(power < minDischarge) { power = minDischarge }
+    power = Math.round(power / 50.0) * 50.0  // Round to 50's
+
+    if(now.isBefore(sunrise) || now.isAfter(sunset)) {
+        if((GX_MaxDischargePower.state as Number).intValue != power.intValue) {
+            logInfo("victron.rules", "Night, set Victron max discharge power = {}", power.intValue)
+            GX_MaxDischargePower.sendCommand(power.intValue)
+        }
+    } else {
+        if((GX_MaxDischargePower.state as Number).intValue != maxDischarge.intValue) {
+            logInfo("victron.rules", "Daylight, set Victron max discharge power = {}", maxDischarge.intValue)
+            GX_MaxDischargePower.sendCommand(maxDischarge.intValue)
+        }
+    }
+
+    if(GX_BatterySoC.state as Number > 97) {
+        if((GX_AcPowerSetpoint.state as Number).intValue != 0) {
+            logInfo("victron.rules", "Battery full, lower grid setpoint to 0")
+            GX_AcPowerSetpoint.sendCommand(0)
+        }
+    } else {
+        if((GX_AcPowerSetpoint.state as Number).intValue != gridSetPoint.intValue) {
+            logInfo("victron.rules", "Battery not full, increase grid setpoint to {}", gridSetPoint.intValue)
+            GX_AcPowerSetpoint.sendCommand(gridSetPoint.intValue)
+        }
+    }
+
 end
