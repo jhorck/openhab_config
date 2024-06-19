@@ -54,6 +54,7 @@ Bridge hue:bridge-api2:1 "Philips hue" [ipAddress="192.168.188.103", application
     Thing device 3a7f847b-e823-4194-9878-b9fcf37e9a87 "Terrasse sensor" [resourceId="3a7f847b-e823-4194-9878-b9fcf37e9a87"] // Hue outdoor motion sensor idV1:/sensors/17
     Thing device 78a563de-bfc1-4ecc-8613-dca0529fcad6 "Vloerlamp kleur" [resourceId="78a563de-bfc1-4ecc-8613-dca0529fcad6"] // Extended color light idV1:/lights/25
     Thing device 086e6248-44b1-48d3-a77b-9ba6b872ef49 "Vloerlamp wit" [resourceId="086e6248-44b1-48d3-a77b-9ba6b872ef49"] // Dimmable light idV1:/lights/26
+    Thing device 0e26d6a4-53bb-40c8-b17e-d980a32baadb "Waskelder" [resourceId="0e26d6a4-53bb-40c8-b17e-d980a32baadb"] // Dimmable light idV1:/lights/50
     // Bridge home things
     Thing zone f4709117-9075-4db0-9624-eec7b1991e89 "All lights" [resourceId="f4709117-9075-4db0-9624-eec7b1991e89"] // Zone idV1:/groups/0
 }
