@@ -249,7 +249,7 @@ Number:Temperature OverloopSensor_Temperature "Temperature [%.1f °C]"   <Temper
 Number OverloopSensor_Battery                 "Battery Level [%.0f %%]" <Battery>     (gOverloopSensor) ["Measurement", "Energy"]      {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:battery-level" }
 Switch OverloopSensor_Low_Battery             "Low Battery"             <LowBattery>  (gOverloopSensor) ["LowBattery", "Energy"]       {channel="hue:device:1:ff986c72-72d3-4d11-98cf-89bb1bbd8d59:battery-low" }
 
-// Dimmable light
+// Dimmable light idV1:/lights/50
 Group gLampWaskelder "Lamp waskelder" <Light> (gKelder) ["Lightbulb"] { widget="oh-toggle-card" [ item="LampWaskelder_Power" ] }
 Switch LampWaskelder_Power      "Power"                <switch> (gLampWaskelder) ["Switch", "Light"]  {channel="hue:device:1:0e26d6a4-53bb-40c8-b17e-d980a32baadb:on-off-only" }
 Dimmer LampWaskelder_Brightness "Brightness [%.0f %%]" <Light>  (gLampWaskelder) ["Control", "Light"] {channel="hue:device:1:0e26d6a4-53bb-40c8-b17e-d980a32baadb:brightness" }

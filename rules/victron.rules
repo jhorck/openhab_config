@@ -43,10 +43,10 @@ end
 
 rule "Victron set max solar discharge power"
 when
-    Time cron "0 0/5 * * * ? *"
+    Time cron "0 0/10 * * * ? *"
 then
-    val sunrise = (Solar_Sunrise_Start.state as DateTimeType).getZonedDateTime()
-    val sunset  = (Solar_Sunset_End.state as DateTimeType).getZonedDateTime()
+    val sunrise = (Solar_Sunrise.state as DateTimeType).getZonedDateTime()
+    val sunset  = (Solar_Sunset.state as DateTimeType).getZonedDateTime()
     val availableSoC = (GX_BatterySoC.state as Number - GX_BatterySoCLimit.state as Number) / 100
     val availableCapacity = capacity * availableSoC
     var duration = ChronoUnit.MINUTES.between(now,sunrise) / 60.0
