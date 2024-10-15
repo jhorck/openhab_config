@@ -120,9 +120,9 @@ DateTime Echo_Zolder_NextTimer            "Next timer"                          
 
 
 // Flashbriefings
-Switch FlashBriefing_Technical_Save            "Save (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:save"}
-Switch FlashBriefing_Technical_Active          "Active"                                                    {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:active"}
-String FlashBriefing_Technical_Play            "Play (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:playOnDevice"}
+//Switch FlashBriefing_Technical_Save            "Save (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:save"}
+//Switch FlashBriefing_Technical_Active          "Active"                                                    {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:active"}
+//String FlashBriefing_Technical_Play            "Play (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing1:playOnDevice"}
 
 //Switch FlashBriefing_LifeStyle_Save            "Save (Write only)"                                         {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing2:save"}
 //Switch FlashBriefing_LifeStyle_Active          "Active"                                                    {channel="amazonechocontrol:flashbriefingprofile:account1:flashbriefing2:active"}
