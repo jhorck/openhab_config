@@ -9,12 +9,14 @@ Thing mqtt:topic:victron:venus "Venus GX" (mqtt:broker:victron) {
     Type number : pv_power_consumption_1 "Consumption 1"        [ stateTopic="N/c8df84d3a80c/system/0/Ac/Consumption/L1/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_consumption_2 "Consumption 2"        [ stateTopic="N/c8df84d3a80c/system/0/Ac/Consumption/L2/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_consumption_3 "Consumption 3"        [ stateTopic="N/c8df84d3a80c/system/0/Ac/Consumption/L3/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
-    Type number : pv_max_discharge_power "Max discharge power"  [ stateTopic="N/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", transformationPattern="JSONPATH:$.value", postCommand="true", commandTopic="W/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", formatBeforePublish="{\"value\":%s}", min=0, max=800, step=50 ]
+    Type number : pv_max_discharge_power "Max discharge power"  [ stateTopic="N/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", transformationPattern="JSONPATH:$.value", postCommand="true", 
+                                                                  commandTopic="W/c8df84d3a80c/settings/0/Settings/CGwacs/MaxDischargePower", formatBeforePublish="{\"value\":%s}", min=0, max=800, step=50 ]
     Type number : pv_power_grid_1        "Grid 1"               [ stateTopic="N/c8df84d3a80c/system/0/Ac/Grid/L1/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_grid_2        "Grid 2"               [ stateTopic="N/c8df84d3a80c/system/0/Ac/Grid/L2/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_power_grid_3        "Grid 3"               [ stateTopic="N/c8df84d3a80c/system/0/Ac/Grid/L3/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
     Type number : pv_inverter_power      "Inverter power"       [ stateTopic="N/c8df84d3a80c/system/0/Dc/Vebus/Power", transformationPattern="JSONPATH:$.value", unit="W" ]
-    Type number : pv_ac_power_set_point  "AC power setpoint"    [ stateTopic="N/c8df84d3a80c/settings/0/Settings/CGwacs/AcPowerSetPoint", transformationPattern="JSONPATH:$.value", postCommand="true", commandTopic="W/c8df84d3a80c/settings/0/Settings/CGwacs/AcPowerSetPoint", formatBeforePublish="{\"value\":%s}", min=-100, max=100, step=10 ]
+    Type number : pv_ac_power_set_point  "AC power setpoint"    [ stateTopic="N/c8df84d3a80c/settings/0/Settings/CGwacs/AcPowerSetPoint", transformationPattern="JSONPATH:$.value", postCommand="true", 
+                                                                  commandTopic="W/c8df84d3a80c/settings/0/Settings/CGwacs/AcPowerSetPoint", formatBeforePublish="{\"value\":%s}", min=-100, max=100, step=10 ]
     Type switch : pv_allow_to_charge     "Allow to charge"      [ stateTopic="N/c8df84d3a80c/vebus/261/Bms/AllowToCharge", transformationPattern="JSONPATH:$.value", off=0, on=1 ]
     Type switch : pv_alarm_no_grid_meter "No grid meter"        [ stateTopic="N/c8df84d3a80c/hub4/0/Alarms/NoGridMeter", transformationPattern="JSONPATH:$.value", off=0, on=1 ]
 }
