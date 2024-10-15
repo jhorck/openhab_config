@@ -36,7 +36,7 @@ Color LampKlok_Color               "Color [%.0f]"             <ColorLight> (gLam
 
 // LivingWhites Plug idV1:/lights/5
 Group gRaamVoor "Raam voor" <Light> (gLichtKeuken) ["Lightbulb"] { widget="oh-toggle-card" [ item="RaamVoor_Power" ] }
-Switch RaamVoor_Power              "Power"                    <switch>      (gRaamVoor) ["Switch", "Light"]             {channel="hue:device:1:f3b7fafd-d3e4-4873-8480-96ad0d5c34e9:on-off--only" }
+Switch RaamVoor_Power              "Power"                    <switch>      (gRaamVoor) ["Switch", "Light"]             {channel="hue:device:1:f3b7fafd-d3e4-4873-8480-96ad0d5c34e9:on-off-only" }
 Dimmer RaamVoor_Brightness         "Brightness [%.0f %%]"     <Light>       (gRaamVoor) ["Control", "Light"]            {channel="hue:device:1:f3b7fafd-d3e4-4873-8480-96ad0d5c34e9:brightness" }
  
 
@@ -232,8 +232,8 @@ Switch TerrasSensor_Low_Battery             "Low Battery"             <LowBatter
 
 // Room idV1:/groups/8
 Group gLichtOverloop "Licht overloop" <Light> (gOverloop) ["Lightbulb"] { widget="oh-toggle-card" [ item="LichtOverloop_Power" ] }
-Switch LichtOverloop_Power      "Power"                <switch> (gLichtOverloop) ["Switch", "Light"]  {channel="hue:device:1:056a8ba3-b484-4820-a67a-919ad55d3c88:on-off-only" }
-Dimmer LichtOverloop_Brightness "Brightness [%.0f %%]" <Light>  (gLichtOverloop) ["Control", "Light"] {channel="hue:device:1:056a8ba3-b484-4820-a67a-919ad55d3c88:brightness" }
+Switch LichtOverloop_Power      "Power"                <switch> (gLichtOverloop) ["Switch", "Light"]  {channel="hue:room:1:056a8ba3-b484-4820-a67a-919ad55d3c88:on-off-only" }
+Dimmer LichtOverloop_Brightness "Brightness [%.0f %%]" <Light>  (gLichtOverloop) ["Control", "Light"] {channel="hue:room:1:056a8ba3-b484-4820-a67a-919ad55d3c88:brightness" }
 
 // Hue color lamp idV1:/lights/36
 Group gLampOverloop "Lamp overloop" <Light> (gLichtOverloop) ["Lightbulb"] { widget="oh-toggle-card" [ item="LampOverloop_Power" ] }
