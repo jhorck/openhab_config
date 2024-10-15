@@ -13,7 +13,7 @@ Number:Power             GX_Grid1             "Grid 1 [%.0f %unit%]"            
 Number:Power             GX_Grid2             "Grid 2 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_2" }
 Number:Power             GX_Grid3             "Grid 3 [%.0f %unit%]"                 <energy> (gGrid) ["Point"] { channel="mqtt:topic:victron:venus:pv_power_grid_3" }
 Number:Power             GX_InverterPower     "Inverter power [%.0f %unit%]"         <energy> (gVenus) ["Point"] { channel="mqtt:topic:victron:venus:pv_inverter_power" }
-Number:Power             GX_AcPowerSetpoint   "AC power setpoint [%.0f %uni%]"                (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_ac_power_set_point", listWidget="oh-stepper-item" [min=-100, max=100, step=10, raised=true]  }
+Number:Power             GX_AcPowerSetpoint   "AC power setpoint [%.0f %unit%]"                (gVenus) ["Setpoint"] { channel="mqtt:topic:victron:venus:pv_ac_power_set_point", listWidget="oh-stepper-item" [min=-100, max=100, step=10, raised=true]  }
 Switch                   GX_AllowToCharge     "Allow to charge"                      <switch> (gVenus) ["Switch"] { channel="mqtt:topic:victron:venus:pv_allow_to_charge", stateDescription=" " [readOnly=true ], widget="oh-toggle-card", listWidget="oh-toggle-item" }
 Switch                   GX_NoGridMeter       "No grid meter"                         <alarm> (gVenus) ["Switch"] { channel="mqtt:topic:victron:venus:pv_alarm_no_grid_meter", stateDescription=" " [readOnly=true ], widget="oh-toggle-card", listWidget="oh-toggle-item" }
 
