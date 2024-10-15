@@ -1,0 +1,20 @@
+Bridge mqtt:broker:nuki "MQTT Broker Nuki" [ host="127.0.0.1", secure=false, username="nuki", password="nuki" ]
+
+Thing mqtt:topic:nuki:voordeur "Door" (mqtt:broker:nuki) {
+    Channels:
+    Type switch   : connected        "Connected"           [ stateTopic="nuki/3F0BD4FC/connected", off=false, on=true ]
+    Type string   : name             "Name"                [ stateTopic="nuki/3F0BD4FC/name" ]
+    Type string   : firmware         "Firmware"            [ stateTopic="nuki/3F0BD4FC/firmware" ]
+    Type string   : deviceType       "Device type"         [ stateTopic="nuki/3F0BD4FC/deviceType" ]
+    Type switch   : serverConnected  "Server connected"    [ stateTopic="nuki/3F0BD4FC/serverConnected", off=false, on=true ]
+    Type number   : lockState        "Lock state"          [ stateTopic="nuki/3F0BD4FC/state" ]
+    Type number   : mode             "Mode"                [ stateTopic="nuki/3F0BD4FC/mode" ]
+    Type number   : batteryLevel     "Lock battery level"  [ stateTopic="nuki/3F0BD4FC/batteryChargeState" ]
+    Type switch   : batteryLow       "Lock battery low"    [ stateTopic="nuki/3F0BD4FC/batteryCritical", off=false, on=true ]
+    Type switch   : keypadBatteryLow "Keypad battery low"  [ stateTopic="nuki/3F0BD4FC/keypadBatteryCritical", off=false, on=true ]
+    Type string   : lockEvent        "Lock action event"   [ stateTopic="nuki/3F0BD4FC/lockActionEvent" ]
+    Type datetime : lastseen         "Last seen"           [ stateTopic="nuki/3F0BD4FC/timestamp" ]
+    Type switch   : lock             "Lock"                [ commandTopic="nuki/3F0BD4FC/lock", off=false, on=true ]
+    Type switch   : unlock           "Unlock"              [ commandTopic="nuki/3F0BD4FC/unlock", off=false, on=true ]
+    Type number   : lockAction       "Lock command"        [ commandTopic="nuki/3F0BD4FC/lockAction" ]
+}

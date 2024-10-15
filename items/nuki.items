@@ -1,0 +1,19 @@
+Group gNuki "Voordeur" <frontdoor> (gHal) ["Equipment"]
+String Door_Name             "Name [%s]"                                  (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:name" }
+String Door_Firmware         "Firmware [%s]"                              (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:firmware" }
+Switch Door_Connected        "Connected [%s]"                <switch>     (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:connected", widget="oh-toggle-card" }
+String Door_DeviceType       "Device type [%s]"                           (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:deviceType"[profile="transform:MAP", function="nuki_device_type.map"] }
+Number Door_LockState        "Lock state [%s]"                            (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:lockState"[profile="transform:MAP", function="nuki_lock_state.map"] }
+Number Door_Mode             "Mode [%s]"                                  (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:mode" }
+
+Switch Door_ServerConnected  "Server connected [%s]"         <switch>     (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:serverConnected", widget="oh-toggle-card" }
+String Door_LockEvent        "Lock event [%s]"                            (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:lockEvent" }
+String Door_LastSeen         "Last seen [%s]"                             (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:lastseen" }
+
+Number Door_BatteryLevel     "Battery level [%.0f %%]"       <battery>    (gNuki) ["Measurement", "Energy"] { channel = "mqtt:topic:nuki:voordeur:batteryLevel" }
+Switch Door_LowBattery       "Low battery [%s]"              <lowbattery> (gNuki) ["LowBattery", "Energy"]  { channel = "mqtt:topic:nuki:voordeur:batteryLow", widget="oh-toggle-card" }
+Switch Door_KeypadLowBattery "Keypad low battery [%s]"       <lowbattery> (gNuki) ["LowBattery", "Energy"]  { channel = "mqtt:topic:nuki:voordeur:keypadBatteryLow", widget="oh-toggle-card" }
+
+Number Door_lock             "Lock door"                     <keyring>    (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:lock" }
+Number Door_unlock           "Unlock door"                   <keyring>    (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:unlock" }
+Number Door_lockAction       "Door lock action"              <keyring>    (gNuki) ["Point"]                 { channel = "mqtt:topic:nuki:voordeur:lockAction"[profile="transform:MAP", function="nuki.map"] }

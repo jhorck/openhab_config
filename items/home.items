@@ -3,6 +3,7 @@ Group gThuis "Thuis" <house> ["House"]
         Group gKamer "Kamer" <sofa> (gBeneden) ["LivingRoom"]
             Group gFernseher "Fernseher" <screen> (gKamer) ["Television"] { alexa="Television" [ name="Fernseher" ] }
         Group gKeuken "Keuken" <kitchen> (gBeneden) ["Kitchen"]
+        Group gHal "Hal" <corridor> (gBeneden) ["Corridor"]
         Group gTerras "Terras" <terrace> (gBeneden) ["Terrace"]
     Group gBoven "Boven" <firstfloor> (gThuis) ["FirstFloor"]
         Group gJorn "Jorn" <bedroom> (gBoven) ["Bedroom"]
