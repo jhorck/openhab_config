@@ -41,3 +41,12 @@ then
         logWarn("kodi.rules", "Unknown command received: " + receivedCommand)
     }
 end
+
+
+rule "TV on"
+when
+    Thing "lgwebos:WebOSTV:tv1" changed from OFFLINE to ONLINE
+then
+    Marantz_Main_Input.sendCommand("SAT/CBL")
+    Marantz_Main_Volume.sendCommand("58")
+end
